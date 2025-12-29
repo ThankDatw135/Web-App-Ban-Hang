@@ -7,7 +7,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   // Global prefix
-  app.setGlobalPrefix('api');
+  app.setGlobalPrefix(process.env.API_PREFIX || 'api/v1');
 
   // CORS
   app.enableCors({
@@ -15,19 +15,19 @@ async function bootstrap() {
     credentials: true,
   });
 
-  // Global validation pipe
+  // Validation
   app.useGlobalPipes(
     new ValidationPipe({
       whitelist: true,
-      transform: true,
       forbidNonWhitelisted: true,
+      transform: true,
     }),
   );
 
-  // Swagger documentation
+  // Swagger Documentation
   const config = new DocumentBuilder()
     .setTitle('Luxury Fashion API')
-    .setDescription('API documentation for Luxury Fashion E-Commerce Platform')
+    .setDescription('Luxury Fashion Platform API Documentation')
     .setVersion('1.0')
     .addBearerAuth()
     .build();
@@ -36,7 +36,8 @@ async function bootstrap() {
 
   const port = process.env.PORT || 3000;
   await app.listen(port);
-  console.log(`🚀 Application is running on: http://localhost:${port}/api`);
-  console.log(`📚 API Documentation: http://localhost:${port}/api/docs`);
+  console.log(`🚀 Application is running on: http://localhost:${port}`);
+  console.log(`📚 Swagger docs: http://localhost:${port}/api/docs`);
 }
+
 bootstrap();

@@ -1,11 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['storage.googleapis.com', 'firebasestorage.googleapis.com'],
+    domains: ['localhost', 'firebasestorage.googleapis.com'],
+    formats: ['image/webp'],
   },
-  env: {
-    NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
+  experimental: {
+    serverActions: true,
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
