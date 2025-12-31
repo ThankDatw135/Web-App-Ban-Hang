@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html class="dark" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lịch sử đơn hàng - Luxury Fashion</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#f4c025",
+              "background-light": "#f8f8f5",
+              "background-dark": "#231e10",
+              "surface-dark": "#2d2818",
+              "border-gold": "#493f22",
+              "text-gold-muted": "#cbbc90",
+            },
+            fontFamily: {
+              "display": ["Manrope", "sans-serif"],
+              "serif": ["Playfair Display", "serif"]
+            },
+            borderRadius: {
+                "DEFAULT": "0.25rem", 
+                "lg": "0.5rem", 
+                "xl": "0.75rem", 
+                "full": "9999px"
+            },
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white antialiased min-h-screen flex flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-border-gold px-6 lg:px-10 py-4 bg-background-dark sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-white">
+<div class="size-6 text-primary">
+<svg fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z"></path>
+</svg>
+</div>
+<h2 class="text-white text-xl font-bold leading-tight tracking-wide">LUXURY FASHION</h2>
+</div>
+<nav class="hidden lg:flex items-center gap-9 ml-4">
+<a class="text-white/80 hover:text-primary transition-colors text-sm font-medium" href="#">New Arrivals</a>
+<a class="text-white/80 hover:text-primary transition-colors text-sm font-medium" href="#">Clothing</a>
+<a class="text-white/80 hover:text-primary transition-colors text-sm font-medium" href="#">Accessories</a>
+<a class="text-white/80 hover:text-primary transition-colors text-sm font-medium" href="#">Shoes</a>
+<a class="text-white/80 hover:text-primary transition-colors text-sm font-medium" href="#">Editorial</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<div class="hidden md:flex relative w-full max-w-xs h-10">
+<div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-text-gold-muted">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="block w-full h-full pl-10 pr-3 py-2 border-none rounded-lg leading-5 bg-surface-dark text-white placeholder-text-gold-muted focus:outline-none focus:ring-1 focus:ring-primary sm:text-sm" placeholder="Tìm kiếm sản phẩm..." type="text"/>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center justify-center rounded-full size-10 hover:bg-surface-dark text-white transition-colors">
+<span class="material-symbols-outlined">shopping_bag</span>
+</button>
+<div class="relative group">
+<button class="flex items-center justify-center rounded-full size-10 bg-surface-dark text-primary border border-primary/20 transition-colors">
+<span class="material-symbols-outlined">person</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<div class="layout-container flex grow flex-col w-full max-w-[1440px] mx-auto">
+<div class="px-4 md:px-10 lg:px-20 py-10 flex flex-col lg:flex-row gap-12">
+<aside class="w-full lg:w-1/4 shrink-0">
+<div class="flex flex-col gap-8 sticky top-28">
+<div class="flex items-center gap-4 pb-6 border-b border-border-gold">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-14 border-2 border-primary/30" data-alt="User avatar profile picture showing a well dressed person" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB633Qr-QrbVNHo2k2876KqVROboxy3t56xt9ZE-K_rMjFrvwAKMbHH54pbpNJWB9WCcHSdo8uLKv0TM3HUY_CtuBth6q2thslRRMq6-5jU7cf8S-byeQDQHq8F3LLp418mg1m4iCg-Hh2ERGnXoYggsjgBgZ3C9y0-2AwnnHex16e-39H-sCOBwt_hJjQP_RxjcU8_nEIgvGjJzmvccD893orvwn2xuuJ1nUYtacLVP85jn8q172a7XLJ-3nMfepgUct8go8h0-NY");'>
+</div>
+<div class="flex flex-col">
+<h1 class="text-white text-lg font-bold leading-tight">Nguyễn Văn A</h1>
+<p class="text-primary text-sm font-medium">Thành viên Vàng</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-4 px-4 py-3 text-text-gold-muted hover:text-white hover:bg-surface-dark rounded-lg transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">dashboard</span>
+<span class="text-sm font-medium">Tổng quan tài khoản</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-text-gold-muted hover:text-white hover:bg-surface-dark rounded-lg transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">person</span>
+<span class="text-sm font-medium">Thông tin cá nhân</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 bg-surface-dark border-l-2 border-primary text-white rounded-r-lg shadow-sm" href="#">
+<span class="material-symbols-outlined filled text-primary">shopping_bag</span>
+<span class="text-sm font-bold">Lịch sử đơn hàng</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-text-gold-muted hover:text-white hover:bg-surface-dark rounded-lg transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">favorite</span>
+<span class="text-sm font-medium">Sản phẩm yêu thích</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-text-gold-muted hover:text-white hover:bg-surface-dark rounded-lg transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">settings</span>
+<span class="text-sm font-medium">Cài đặt</span>
+</a>
+<div class="pt-4 mt-2 border-t border-border-gold">
+<a class="flex items-center gap-4 px-4 py-3 text-red-400 hover:text-red-300 hover:bg-red-500/10 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="text-sm font-medium">Đăng xuất</span>
+</a>
+</div>
+</nav>
+</div>
+</aside>
+<main class="flex-1 min-w-0">
+<div class="flex flex-col gap-10">
+<div class="flex flex-col gap-2 border-b border-border-gold pb-6">
+<h2 class="text-3xl md:text-4xl font-serif text-white tracking-tight">Lịch sử đơn hàng</h2>
+<p class="text-text-gold-muted text-base">Xem lại lịch sử mua sắm và theo dõi trạng thái các đơn hàng của bạn.</p>
+</div>
+<div class="flex flex-col gap-6">
+<div class="bg-surface-dark rounded-xl p-6 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 group">
+<div class="flex flex-col gap-6">
+<div class="flex flex-wrap items-center justify-between gap-4 border-b border-white/5 pb-4">
+<div class="flex flex-wrap items-center gap-4">
+<div class="flex flex-col">
+<span class="text-xs text-text-gold-muted uppercase tracking-wider">Mã đơn hàng</span>
+<span class="text-white font-bold text-lg">#ORD-2023-8892</span>
+</div>
+<div class="hidden sm:block w-px h-8 bg-white/10 mx-2"></div>
+<div class="flex flex-col">
+<span class="text-xs text-text-gold-muted uppercase tracking-wider">Ngày đặt</span>
+<span class="text-white font-medium">24 Tháng 10, 2023</span>
+</div>
+</div>
+<span class="px-3 py-1 rounded text-xs font-bold uppercase tracking-wide bg-green-900/20 text-green-400 border border-green-800/50">
+                                        Đã giao hàng
+                                    </span>
+</div>
+<div class="flex flex-col md:flex-row gap-6 justify-between items-start md:items-center">
+<div class="flex items-center gap-3">
+<div class="size-20 rounded bg-background-dark border border-white/5 overflow-hidden relative">
+<img alt="Giày thể thao" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDs1BHyj-Imptp4fQR_z3CyvYOaraSYHdEPUM4fTOu6F5VjbjSktsgVKlwY6l0qYf3PmF6FYYbtUzQmOfRhkZ9He9hQRGspQr1KvLWJJRSNW-IODL19hT6qy9qjcT06810iv52djsrwnIQ7uVBVLnvuq7o2RBXjD7tyHbL-rWaxRuoZl6MPKSALnMEm4LUvRT4B3QhnGYUEokdCwkDst73Lrg1BNEyhDZCNhjbJF5HQZLw8cD9nTAS5_O-dDu7nGxxKR6PDSRFOXY8"/>
+</div>
+<div class="size-20 rounded bg-background-dark border border-white/5 overflow-hidden relative">
+<img alt="Túi xách" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnbwFoN6Lg0N0vgPsdg9Y55-iIBJ7qTBtx8bHnf8bXvIPYg1xg9lwRJCjxazuxPyAH54CpzIZI9Hrob1O5esMQFOt8kQfQUaSBByWCmsxDqSRi1SymKAnqGnyd25_u_qhLtjfBuA68hWnyTeWgRdFmfHbnntiQQfKt7S_QVT6ofz44YiMB3sINFoA2lB9NCmuiPqyDUcrfk1Bl0ER_SOkM0bHk6Kz22b2fS0tbW82mNwVfqHt5gdlLuO29qwB7_mQZbPBTVx08lAI"/>
+</div>
+<div class="size-20 rounded bg-background-dark border border-white/5 flex items-center justify-center text-text-gold-muted text-xs font-medium">
+                                            +2
+                                        </div>
+</div>
+<div class="flex flex-row md:flex-col items-center md:items-end justify-between w-full md:w-auto gap-4 md:gap-1">
+<div class="flex flex-col md:items-end">
+<span class="text-xs text-text-gold-muted uppercase tracking-wider">Tổng tiền</span>
+<span class="text-xl text-primary font-serif font-medium">15.500.000 ₫</span>
+</div>
+<button class="mt-0 md:mt-2 text-white text-sm font-medium hover:text-primary transition-colors flex items-center gap-1 group/btn">
+                                            Chi tiết
+                                            <span class="material-symbols-outlined text-lg group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-dark rounded-xl p-6 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 group">
+<div class="flex flex-col gap-6">
+<div class="flex flex-wrap items-center justify-between gap-4 border-b border-white/5 pb-4">
+<div class="flex flex-wrap items-center gap-4">
+<div class="flex flex-col">
+<span class="text-xs text-text-gold-muted uppercase tracking-wider">Mã đơn hàng</span>
+<span class="text-white font-bold text-lg">#ORD-2023-8901</span>
+</div>
+<div class="hidden sm:block w-px h-8 bg-white/10 mx-2"></div>
+<div class="flex flex-col">
+<span class="text-xs text-text-gold-muted uppercase tracking-wider">Ngày đặt</span>
+<span class="text-white font-medium">02 Tháng 11, 2023</span>
+</div>
+</div>
+<span class="px-3 py-1 rounded text-xs font-bold uppercase tracking-wide bg-primary/10 text-primary border border-primary/20">
+                                        Đang xử lý
+                                    </span>
+</div>
+<div class="flex flex-col md:flex-row gap-6 justify-between items-start md:items-center">
+<div class="flex items-center gap-3">
+<div class="size-20 rounded bg-background-dark border border-white/5 overflow-hidden relative">
+<img alt="Áo sơ mi lụa" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwldxgsMkGGm0h1pitl6Oo6CVIiGMUJhIANyhhxD3BiuYtTjHee2nn3VB2nbEWIdLoPgapl-cE-3uFJykgiFZUjQSVgpvG1HMdQM-fr0sY4FsvN0kFXp4hpmicKW1rS9wO0fsETwtnRvf2Egkm6JwuKiKQakemORs5PGb55qNxiDX9IIGbjgtXD7djniSARV4Qw3UA6a_yz9TMg8S9lElu10K5F6Jp9mCsLo161L59-Otyr_qDwYqX7Fm11w_ceSeJJI7LkDz0HVc"/>
+</div>
+</div>
+<div class="flex flex-row md:flex-col items-center md:items-end justify-between w-full md:w-auto gap-4 md:gap-1">
+<div class="flex flex-col md:items-end">
+<span class="text-xs text-text-gold-muted uppercase tracking-wider">Tổng tiền</span>
+<span class="text-xl text-primary font-serif font-medium">4.200.000 ₫</span>
+</div>
+<button class="mt-0 md:mt-2 text-white text-sm font-medium hover:text-primary transition-colors flex items-center gap-1 group/btn">
+                                            Chi tiết
+                                            <span class="material-symbols-outlined text-lg group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-dark rounded-xl p-6 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 group">
+<div class="flex flex-col gap-6">
+<div class="flex flex-wrap items-center justify-between gap-4 border-b border-white/5 pb-4">
+<div class="flex flex-wrap items-center gap-4">
+<div class="flex flex-col">
+<span class="text-xs text-text-gold-muted uppercase tracking-wider">Mã đơn hàng</span>
+<span class="text-white font-bold text-lg">#ORD-2023-7554</span>
+</div>
+<div class="hidden sm:block w-px h-8 bg-white/10 mx-2"></div>
+<div class="flex flex-col">
+<span class="text-xs text-text-gold-muted uppercase tracking-wider">Ngày đặt</span>
+<span class="text-white font-medium">15 Tháng 09, 2023</span>
+</div>
+</div>
+<span class="px-3 py-1 rounded text-xs font-bold uppercase tracking-wide bg-green-900/20 text-green-400 border border-green-800/50">
+                                        Đã giao hàng
+                                    </span>
+</div>
+<div class="flex flex-col md:flex-row gap-6 justify-between items-start md:items-center">
+<div class="flex items-center gap-3">
+<div class="size-20 rounded bg-background-dark border border-white/5 overflow-hidden relative">
+<img alt="Túi đeo chéo" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdyGBum5jVZKeB8mU7PX2bhzMz_vLocIlHE3fII4Rjc_Fg-7ccRRbsW-Hx9998MgIkYwY89XYVEAKcIsUHXU5RfKHXS1dDRMnF7Bg6zG2h958J8zQhfWKcdqWrnxyzUIZyZqaYqH5okUA7fF8jOy6FO3NOPdoB-EqdF_GO2r-qxX6tCY_-xCemxTbisEr8M9M21LZbXeT65R3zeJM5gkYv8HZAGgYR4tRmCo_BuYvlepkmnbsuYjEFI3kVlQKlQQdEYf24fyLxRvw"/>
+</div>
+<div class="size-20 rounded bg-background-dark border border-white/5 overflow-hidden relative">
+<img alt="Giày cao gót" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCw1iDS46dWN2aNv65KrvjEy8M2dC1NU9qJr7kwo4cYpB4Jq7zwWN7SD1P_oTm2e8qHCaccGoIkcitd_faloFXPdfY155-LJY4zFwJkBEOI2myitRI3haa2MYsTwfuZ46FGqTaTYBvMR6Mr5ZFwiEfeJLZKbYUguFZ0VvjJfK1wA2gviJxTw7X66VfTzaqLmHzNh1-nOeqbWVnBDGog3_TE_hD8DLAINEPQ_ar0GR2iTY-BBh0_LWQqxDGpwBoTdoElVxZU3L1UebM"/>
+</div>
+</div>
+<div class="flex flex-row md:flex-col items-center md:items-end justify-between w-full md:w-auto gap-4 md:gap-1">
+<div class="flex flex-col md:items-end">
+<span class="text-xs text-text-gold-muted uppercase tracking-wider">Tổng tiền</span>
+<span class="text-xl text-primary font-serif font-medium">8.950.000 ₫</span>
+</div>
+<button class="mt-0 md:mt-2 text-white text-sm font-medium hover:text-primary transition-colors flex items-center gap-1 group/btn">
+                                            Chi tiết
+                                            <span class="material-symbols-outlined text-lg group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="flex justify-center pt-8">
+<nav class="flex items-center gap-2">
+<button class="size-10 flex items-center justify-center rounded-lg border border-white/10 text-white hover:border-primary hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg">chevron_left</span>
+</button>
+<button class="size-10 flex items-center justify-center rounded-lg bg-primary text-background-dark font-bold">1</button>
+<button class="size-10 flex items-center justify-center rounded-lg border border-white/10 text-white hover:border-primary hover:text-primary transition-colors">2</button>
+<button class="size-10 flex items-center justify-center rounded-lg border border-white/10 text-white hover:border-primary hover:text-primary transition-colors">3</button>
+<button class="size-10 flex items-center justify-center rounded-lg border border-white/10 text-white hover:border-primary hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg">chevron_right</span>
+</button>
+</nav>
+</div>
+</div>
+</main>
+</div>
+</div>
+
+</body></html>

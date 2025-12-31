@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Atelier AI - Luxury Fitting Room</title>
+<!-- Google Fonts: Manrope -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e8ba30",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#211d11",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar hiding for clean UI */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-black flex justify-center items-center min-h-screen m-0 p-0 font-display selection:bg-primary selection:text-black">
+<!-- Mobile Screen Container -->
+<div class="relative flex h-full min-h-screen w-full max-w-md flex-col bg-background-light dark:bg-background-dark overflow-hidden shadow-2xl">
+<!-- Top App Bar -->
+<header class="absolute top-0 left-0 right-0 z-50 flex items-center justify-between px-6 pt-12 pb-4 bg-gradient-to-b from-black/80 to-transparent">
+<div class="flex items-center gap-2 text-primary/80">
+<span class="material-symbols-outlined text-[24px]">auto_awesome</span>
+</div>
+<h1 class="text-white text-sm font-bold uppercase tracking-[0.2em] opacity-90">Atelier AI</h1>
+<button class="flex items-center justify-center text-white/80 hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">lock</span>
+</button>
+</header>
+<!-- Main Scrollable Area -->
+<main class="flex-1 overflow-y-auto no-scrollbar pb-32">
+<!-- RESULT CARD (Hero Section) -->
+<section class="relative w-full aspect-[3/4] group">
+<!-- Main Image -->
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Model wearing a luxurious silk charmeuse gold gown in a dark, moody room" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDucgwcJAqHRhmEu7Ya5dZbv1it_Aaj7APx6bb4ebJDZgHi885SjDx4ufB7JaFV5ZS7upw-k6N5NgoEY4LU-kUqmifSHuPmkqk0QoCovsxvg_ONfaFJFF-eqN9bdIt3ouWn0vROhxwDfdAzN9Dd3a-TmgDENTohEYh27j4srSBge8FgYxyBTJnGgdTriDBsz8WEmB2oClyqyf0IfIjMbezqxklC6Eh8g7GiWPMtIPSsyMaVxfPaT3gGhMZ_QZsFcbZ94zB4WaXBBrWX");'>
+</div>
+<!-- Gradient Overlay -->
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-black/40"></div>
+<!-- Editorial Info Overlay -->
+<div class="absolute bottom-0 left-0 right-0 p-6 flex flex-col gap-2">
+<div class="flex justify-between items-end">
+<div class="space-y-1">
+<p class="text-primary text-xs font-semibold tracking-widest uppercase mb-1">Generated Look</p>
+<h2 class="text-white text-3xl font-light tracking-tight">Silk Charmeuse Gown</h2>
+</div>
+<p class="text-white/90 text-xl font-light">$1,200</p>
+</div>
+</div>
+</section>
+<!-- CAROUSEL (Variations) -->
+<section class="mt-8 px-6">
+<div class="flex justify-between items-end mb-4">
+<p class="text-white/60 text-xs font-medium uppercase tracking-widest">Variations</p>
+<button class="text-primary text-xs font-bold tracking-wide">View Collection</button>
+</div>
+<div class="flex overflow-x-auto gap-4 pb-4 no-scrollbar -mx-6 px-6">
+<!-- Active Item -->
+<div class="flex-shrink-0 w-20 flex flex-col gap-2 cursor-pointer">
+<div class="w-20 h-24 rounded-lg bg-cover bg-center border-2 border-primary shadow-[0_0_15px_rgba(232,186,48,0.3)] transition-all" data-alt="Close up of gold silk fabric texture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDWiRWKrfoMeNgTiUXpgFAiQYiUaCGrU45WEUdA5yCoBxkUuu_mVeRT-QPgAdZc5xmbcZ5kKj3-pN83tix5jOm97hXkN0t8DVAraesCCpz9LElwwMF45GYwlhCVxoUcPXDIxjmi0CuPk36oMpZUlclIcz5vBIIu4_uZrjzAM9GBpVp_CcfUn-1Nr0Y_WjFRdisEZ0xjX2qD9Fvu8y2ufkYSmV-Jgx6JotKTEfrUB60BkRNDfDXynBGt7Qk7j3c2jLhxaXm5kcCNfZe-");'></div>
+<span class="text-primary text-[10px] text-center font-bold tracking-wide">GOLD</span>
+</div>
+<!-- Item 2 -->
+<div class="flex-shrink-0 w-20 flex flex-col gap-2 cursor-pointer opacity-60 hover:opacity-100 transition-opacity">
+<div class="w-20 h-24 rounded-lg bg-cover bg-center border border-white/10" data-alt="Close up of dark velvet fabric texture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCEPSIC8Ob9OGHT41Hzi9Lc2IPvIaRjFStk37e1Pt6J6GgyN9wZ55rdg49vTGDcSnFyYqi-NGDrznxpSNxi2ro4qaTGE5wueSOlH5IiMQOUFQVE_aWa4YFhSQb8wDghZuEib9-_xP_qYg8vT1__1y718mLWk3vPOwrN25-L4IHsIlJJbi_D57wQVHhWW3VjZvby4E9UHUNJlgMItDbdJpobkW0_aXK-MOJUthzY5Ea3L38fDvAqweryC0sF3rXcxnY4u-lGzkIWGG3J");'></div>
+<span class="text-white text-[10px] text-center font-medium tracking-wide">ONYX</span>
+</div>
+<!-- Item 3 -->
+<div class="flex-shrink-0 w-20 flex flex-col gap-2 cursor-pointer opacity-60 hover:opacity-100 transition-opacity">
+<div class="w-20 h-24 rounded-lg bg-cover bg-center border border-white/10" data-alt="Close up of pearl white satin fabric" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA_OoOIY9LY4KA4DX12KkeIZMbGg-owJhM9nifsOPNd4NUVHiwVnpVGp7QlzBetahLG12G5NP3f9SDNtyqyRjyF_8GW9lybjX7YzEoeKc84K6PGzXkjgNNzDgAAbU6r10u3lY6kI_XJ2vfBpaTrkpQhXPoQLno8xGGvZk9TJR2RUJI9aQJaFWFXhKJmPQo7QawVp0Y7w5NDTi8lkG-kkvtB4gmZge7JikarxCQTy0OwKnRMbNO4s-SU9kHnyC1b_wACIbsQTZQ8kfOU");'></div>
+<span class="text-white text-[10px] text-center font-medium tracking-wide">PEARL</span>
+</div>
+<!-- Item 4 -->
+<div class="flex-shrink-0 w-20 flex flex-col gap-2 cursor-pointer opacity-60 hover:opacity-100 transition-opacity">
+<div class="w-20 h-24 rounded-lg bg-cover bg-center border border-white/10" data-alt="Close up of red floral pattern fabric" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAtIOav_iiJvB7kIuLaeJzte44Af76LjH2OlfDbjJeV_K88I80IVpEn6srM9ZrbG9Z3INWFkDiS-WxyDy1NGkDG4xQ7GmSePg2lISNBDXYwp8MDTnemrS4dknPoKMSIqrLp-coh9qwkeDZoPKuxjgQAd83fPs_tZonHIiqxklqMIGvIPm8tamQES0sxaHOZzQG79RP3ek5DE0g4_jCAZu_ks8b_zlMheQfRCN5ArofP3pNso19T2CeNwAYSuTJPoVNE3f9vC73RVC-M");'></div>
+<span class="text-white text-[10px] text-center font-medium tracking-wide">FLORA</span>
+</div>
+</div>
+</section>
+<div class="h-px bg-white/5 mx-6 my-8"></div>
+<!-- PROCESSING STATE (Status) -->
+<section class="px-6 mb-8">
+<div class="flex items-center gap-3 mb-4">
+<div class="flex items-center justify-center size-8 rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-[16px] animate-pulse">hourglass_top</span>
+</div>
+<p class="text-white/60 text-xs font-medium uppercase tracking-widest">In Queue</p>
+</div>
+<div class="bg-white/5 rounded-xl p-5 border border-white/5 backdrop-blur-sm">
+<div class="flex justify-between items-center mb-3">
+<p class="text-white text-sm font-medium">Rendering 'Onyx Velvet'...</p>
+<span class="text-primary text-xs">75%</span>
+</div>
+<div class="w-full bg-black/40 rounded-full h-1 mb-2">
+<div class="bg-primary h-1 rounded-full transition-all duration-1000" style="width: 75%"></div>
+</div>
+<p class="text-white/40 text-xs font-light">Analyzing lighting and draped silhouette</p>
+</div>
+</section>
+<!-- EMPTY STATE (Upload New) -->
+<section class="px-6 pb-8">
+<p class="text-white/60 text-xs font-medium uppercase tracking-widest mb-4">New Session</p>
+<div class="flex flex-col items-center justify-center gap-4 rounded-xl border border-dashed border-primary/30 bg-primary/5 px-6 py-10 hover:bg-primary/10 transition-colors cursor-pointer group">
+<div class="size-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-primary text-[24px]">add_a_photo</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-center">
+<p class="text-white text-base font-semibold">Try Another Look</p>
+<p class="text-white/50 text-xs max-w-[200px] leading-relaxed">Upload a new full-body photo to begin a fresh tailoring process.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Floating Action Bar -->
+<div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-background-dark via-background-dark/95 to-transparent z-40">
+<button class="w-full h-14 bg-primary text-background-dark rounded-lg flex items-center justify-center gap-3 shadow-[0_0_20px_rgba(232,186,48,0.2)] hover:bg-white hover:shadow-[0_0_25px_rgba(255,255,255,0.3)] transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+<span class="text-sm font-bold tracking-wider uppercase">Add to Wardrobe</span>
+</button>
+</div>
+</div>
+</body></html>

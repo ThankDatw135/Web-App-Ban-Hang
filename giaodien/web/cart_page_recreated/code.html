@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aurum &amp; Oak - Shopping Cart</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&amp;family=Lato:wght@300;400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#C9B37E", // Muted gold
+              "background-page": "#0E0E0E", // Deep charcoal black
+              "card-dark": "#1A1A1D", // Slightly lighter for cards
+              "text-main": "#F7F5F2", // Ivory white
+              "text-muted": "#A1A1AA",
+              "border-dark": "#2E2E33",
+            },
+            fontFamily: {
+              display: ["'Playfair Display'", "serif"],
+              body: ["'Lato'", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "4px",
+              'xl': "12px",
+              '2xl': "16px",
+            },
+            boxShadow: {
+                'glow': '0 0 20px rgba(201, 179, 126, 0.15)',
+                'glow-hover': '0 0 30px rgba(201, 179, 126, 0.25)',
+            }
+          },
+        },
+      };
+    </script>
+<style>
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #0E0E0E;
+        }
+        h1, h2, h3, h4, .font-serif {
+            font-family: 'Playfair Display', serif;
+        }::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0E0E0E; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2E2E33; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3f3f46; 
+        }input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button { 
+          -webkit-appearance: none; 
+          margin: 0; 
+        }
+    </style>
+</head>
+<body class="bg-background-page text-text-main min-h-screen flex flex-col antialiased selection:bg-primary/30">
+<header class="w-full px-6 py-8 md:px-12 flex items-center justify-between">
+<div class="text-2xl md:text-3xl font-serif tracking-widest text-primary">
+        AURUM &amp; OAK
+    </div>
+<nav class="hidden md:flex space-x-8 text-sm uppercase tracking-wider font-light text-gray-300">
+<a class="hover:text-primary transition-colors duration-300" href="#">New Arrivals</a>
+<a class="hover:text-primary transition-colors duration-300" href="#">Women</a>
+<a class="hover:text-primary transition-colors duration-300" href="#">Men</a>
+<a class="hover:text-primary transition-colors duration-300" href="#">Accessories</a>
+<a class="hover:text-primary transition-colors duration-300" href="#">Journal</a>
+<a class="hover:text-primary transition-colors duration-300" href="#">Account</a>
+</nav>
+<div class="flex items-center space-x-6 text-gray-300">
+<button class="hover:text-primary transition-colors duration-300">
+<span class="material-symbols-outlined text-[28px] font-light">search</span>
+</button>
+<button class="hover:text-primary transition-colors duration-300 relative">
+<span class="material-symbols-outlined text-[28px] font-light">shopping_cart</span>
+<span class="absolute -top-1 -right-2 bg-primary text-background-page text-[10px] font-bold h-4 w-4 rounded-full flex items-center justify-center">8</span>
+</button>
+</div>
+</header>
+<main class="flex-grow px-6 md:px-12 py-6 md:py-10 max-w-[1400px] mx-auto w-full">
+<h1 class="text-5xl md:text-6xl font-serif mb-12 text-[#F0EEE6]">Your Cart</h1>
+<div class="flex flex-col lg:flex-row gap-12 lg:gap-16">
+<div class="flex-1 bg-card-dark rounded-2xl p-6 md:p-8 space-y-8 shadow-2xl border border-white/5">
+<div class="flex flex-col sm:flex-row gap-8 pb-8 border-b border-border-dark last:border-0 last:pb-0">
+<div class="w-full sm:w-40 h-48 bg-[#F7F5F2] rounded-lg overflow-hidden flex-shrink-0 relative flex items-center justify-center">
+<img alt="Emerald Green Blazer" class="w-full h-full object-cover mix-blend-multiply" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFPDliwMzvq5p3luqm61G4W1r8W8I0jw24yR5Az35pBGka3Fxc5WQ6OaF7dgZfCnkpymaxZxQ_MBoBcsd3MrpQibnTOZaLnXYaNYLWxTgMb3azIBQDYoDBy5843GpTrEPJ5l9zJ67QIpl3KWh5DboCfKi2LT75BfrOw86W8qaDnVYwBHiRyy1q6Poke6m9jCPWqfXNQ_iu1ZSpON0sKk6isNKuMPAcPomvCUlN5QnXXHPGM9zIg9XD8Okw5gqY8a5qGK8m-M2pZ34"/>
+</div>
+<div class="flex-grow flex flex-col">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-2xl md:text-3xl font-serif text-[#F0EEE6]">Silk Cashmere Blazer</h3>
+<span class="text-2xl font-serif text-[#F0EEE6]">$1,200</span>
+</div>
+<p class="text-sm text-gray-400 mb-6 font-light tracking-wide">Color: Emerald Green | Size: M</p>
+<div class="mt-auto flex items-end justify-between">
+<div class="flex flex-col gap-2">
+<span class="text-sm text-gray-400 font-light">Quantity: 1</span>
+<div class="flex items-center gap-2">
+<button class="w-8 h-8 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors text-gray-400 hover:text-primary">
+<span class="material-symbols-outlined text-[16px]">remove</span>
+</button>
+<button class="w-8 h-8 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors text-primary hover:text-[#e0cba0]">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+</div>
+<div class="flex gap-6 text-sm">
+<button class="text-primary hover:text-[#F0EEE6] underline decoration-primary/40 underline-offset-4 transition-colors">Edit</button>
+<button class="text-primary hover:text-[#F0EEE6] underline decoration-primary/40 underline-offset-4 transition-colors">Remove</button>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row gap-8 pb-8 border-b border-border-dark last:border-0 last:pb-0">
+<div class="w-full sm:w-40 h-48 bg-[#F7F5F2] rounded-lg overflow-hidden flex-shrink-0 relative flex items-center justify-center">
+<img alt="Leather Tote Bag" class="w-full h-full object-contain p-4 mix-blend-multiply" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnJfYkvYoD4mTUu_ZSYwVl5CiEJvWk0Vl1-LLszPc29jX5MPKwHbj5LR_mh-CvBZM5vm1kAyK0p2Ub-FLrvVa2X6ixFlH4iKC7hTCGMmtw_fIZ-ZvmafRT1BrWzHs6jDVeaqb2E__xytW90jrF64RyR2yN9UIA97Qz0AH3XzqZ2RZrFbMs8QQbWtjGNKpCo6FbAK0FTEkhGzwhfAnDTAIHI-Hl0DP852z4vU73V7BH90b-J9nYBb5NsS1teFi-T148d4lIJLJCZV8"/>
+</div>
+<div class="flex-grow flex flex-col">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-2xl md:text-3xl font-serif text-[#F0EEE6]">Leather Tote Bag</h3>
+<span class="text-2xl font-serif text-[#F0EEE6]">$850</span>
+</div>
+<p class="text-sm text-gray-400 mb-6 font-light tracking-wide">Saddle Brown</p>
+<div class="mt-auto flex items-end justify-between">
+<div class="flex flex-col gap-2">
+<span class="text-sm text-gray-400 font-light">Quantity: 1</span>
+<div class="flex items-center gap-2">
+<button class="w-8 h-8 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors text-gray-400 hover:text-primary">
+<span class="material-symbols-outlined text-[16px]">remove</span>
+</button>
+<button class="w-8 h-8 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors text-primary hover:text-[#e0cba0]">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row gap-8 pb-2">
+<div class="w-full sm:w-40 h-48 bg-[#F7F5F2] rounded-lg overflow-hidden flex-shrink-0 relative flex items-center justify-center">
+<img alt="Cashmere Scarf" class="w-full h-full object-cover mix-blend-multiply" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLxB1gWLfqNZFpzZULBkpERCzPYi9Kh7NkemjeJC1Tk5-P-9FKDS42a4NM5L-t3KnaGlCCTjysZYRzBcnVelsfHcgqzC7zwIIpXi1o12-fwupDaUJqNc0GMK3yvwbp22bP4gdgArRo865vTxoN1mPIlRoTIPmyEaB0MCJ35USPuzNUqqs99YqekvqsygyrvkuwO78L0xZ0a7PEpSG0WDiuudFE2B-Z9UfA6m4a3U7ZfPpAJPJ235uwYWluNUiagdZ8BGEM_X5_DPw"/>
+</div>
+<div class="flex-grow flex flex-col">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-2xl md:text-3xl font-serif text-[#F0EEE6]">Cashmere Scarf</h3>
+<span class="text-2xl font-serif text-[#F0EEE6]">$450</span>
+</div>
+<p class="text-sm text-gray-400 mb-6 font-light tracking-wide">Cream</p>
+<div class="mt-auto flex items-end justify-between">
+<div class="flex flex-col gap-2">
+<span class="text-sm text-gray-400 font-light">Quantity: 1</span>
+<div class="flex items-center gap-2">
+<button class="w-8 h-8 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors text-gray-400 hover:text-primary">
+<span class="material-symbols-outlined text-[16px]">remove</span>
+</button>
+<button class="w-8 h-8 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors text-primary hover:text-[#e0cba0]">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="w-full lg:w-[420px] flex-shrink-0 flex flex-col gap-10">
+<div class="bg-card-dark rounded-2xl p-8 shadow-2xl border border-white/5">
+<h2 class="text-3xl font-serif text-[#F0EEE6] mb-8">Order Summary</h2>
+<div class="space-y-5 mb-8 border-b border-white/10 pb-8">
+<div class="flex justify-between text-gray-400 font-light tracking-wide text-lg">
+<span>Subtotal:</span>
+<span class="text-[#F0EEE6]">$2,500</span>
+</div>
+<div class="flex justify-between text-gray-400 font-light tracking-wide text-lg">
+<span>Shipping:</span>
+<span class="text-[#F0EEE6]">Complimentary</span>
+</div>
+<div class="flex justify-between text-gray-400 font-light tracking-wide text-lg">
+<span>Tax (estimated):</span>
+<span class="text-[#F0EEE6]">$210</span>
+</div>
+</div>
+<div class="flex justify-between items-baseline">
+<span class="text-3xl font-serif text-[#F0EEE6]">Total:</span>
+<span class="text-3xl font-serif text-[#F0EEE6]">$2,710</span>
+</div>
+</div>
+<button class="w-full py-4 px-6 border border-primary/40 bg-card-dark/50 text-[#F0EEE6] rounded-full transition-all duration-300 text-base tracking-widest uppercase shadow-glow hover:shadow-glow-hover hover:border-primary hover:text-primary relative overflow-hidden group">
+<span class="relative z-10">Proceed to Checkout</span>
+<div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+</button>
+<div class="mt-4">
+<h3 class="text-3xl font-serif text-[#F0EEE6] mb-6">Receive updates</h3>
+<div class="flex overflow-hidden">
+<input class="bg-transparent border border-white/20 text-[#F0EEE6] px-5 py-3 flex-grow focus:ring-1 focus:ring-primary focus:border-primary placeholder-gray-500 font-light rounded-l-md outline-none transition-colors" placeholder="Email Address" type="email"/>
+<button class="bg-primary text-[#0E0E0E] px-8 py-3 font-medium hover:bg-[#bca671] transition-colors rounded-r-md tracking-wide">
+                        Subscribe
+                    </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="mt-20 border-t border-white/10 py-12 px-6 md:px-12 bg-background-page">
+<div class="flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="text-xl md:text-2xl font-serif tracking-widest text-primary">
+            AURUM &amp; OAK
+        </div>
+<div class="flex flex-wrap justify-center gap-8 text-sm tracking-wide text-gray-300">
+<a class="hover:text-primary transition-colors" href="#">Contact</a>
+<a class="hover:text-primary transition-colors" href="#">Shipping</a>
+<a class="hover:text-primary transition-colors" href="#">Returns</a>
+<a class="hover:text-primary transition-colors" href="#">About Us</a>
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+</div>
+<div class="flex gap-5 text-gray-400">
+<a class="hover:text-primary transition-colors" href="#"><span class="sr-only">Facebook</span>
+<svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path></svg>
+</a>
+<a class="hover:text-primary transition-colors" href="#"><span class="sr-only">Twitter</span> 
+<svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M13.6823 10.6218L20.2391 3H18.6854L12.9921 9.61788L8.44486 3H3.2002L10.0765 13.0074L3.2002 21H4.75404L10.7663 14.0113L15.5685 21H20.8131L13.6819 10.6218H13.6823ZM11.5541 13.0956L10.8574 12.0991L5.31391 4.16971H7.70053L12.1742 10.5689L12.8709 11.5655L18.6861 19.8835H16.2995L11.5541 13.096V13.0956Z"></path></svg>
+</a>
+<a class="hover:text-primary transition-colors" href="#"><span class="sr-only">Instagram</span>
+<svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772 4.902 4.902 0 011.772-1.153c.636-.247 1.363-.416 2.427-.465C9.673 2.013 10.03 2 12.315 2zm-3.196 8.42a3.196 3.196 0 116.392 0 3.196 3.196 0 01-6.392 0zM12.315 6.5a5.915 5.915 0 100 11.83 5.915 5.915 0 000-11.83zm5.506-1.494a1.096 1.096 0 11-2.192 0 1.096 1.096 0 012.192 0z" fill-rule="evenodd"></path></svg>
+</a>
+</div>
+</div>
+</footer>
+
+</body></html>

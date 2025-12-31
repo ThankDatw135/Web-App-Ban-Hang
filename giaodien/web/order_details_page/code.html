@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Order Details - LUXE</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f4c025",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#231e10",
+                        "surface-dark": "#2d2616",
+                        "gold-muted": "#cbbc90",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white antialiased min-h-screen flex flex-col">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 w-full border-b border-[#493f22] bg-background-dark/95 backdrop-blur-sm">
+<div class="mx-auto flex h-16 max-w-[1440px] items-center justify-between px-6 lg:px-10">
+<div class="flex items-center gap-4">
+<a class="flex items-center gap-2 text-white hover:opacity-90 transition-opacity" href="#">
+<span class="material-symbols-outlined text-primary text-3xl">diamond</span>
+<h2 class="text-xl font-bold tracking-wide">LUXE</h2>
+</a>
+</div>
+<nav class="hidden md:flex flex-1 justify-end gap-8 items-center">
+<div class="flex items-center gap-8 mr-4">
+<a class="text-sm font-medium text-white/80 hover:text-primary transition-colors" href="#">New Arrivals</a>
+<a class="text-sm font-medium text-white/80 hover:text-primary transition-colors" href="#">Ready to Wear</a>
+<a class="text-sm font-medium text-white/80 hover:text-primary transition-colors" href="#">Accessories</a>
+<a class="text-sm font-medium text-primary" href="#">Account</a>
+</div>
+<div class="flex gap-3">
+<button class="flex size-10 items-center justify-center rounded-lg bg-[#493f22] hover:bg-[#5a4e2b] text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</button>
+<button class="flex size-10 items-center justify-center rounded-lg bg-[#493f22] hover:bg-[#5a4e2b] text-white transition-colors relative">
+<span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+<span class="absolute top-1.5 right-1.5 size-2 rounded-full bg-primary"></span>
+</button>
+</div>
+</nav>
+<!-- Mobile Menu Button -->
+<button class="md:hidden text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<!-- Main Content Area -->
+<div class="flex-1 w-full max-w-[1440px] mx-auto px-4 md:px-10 py-8 md:py-12">
+<div class="flex flex-col lg:flex-row gap-12">
+<!-- Sidebar Navigation -->
+<aside class="w-full lg:w-64 shrink-0">
+<div class="sticky top-24">
+<div class="mb-8">
+<h1 class="text-xl font-medium text-white">Tài khoản</h1>
+<p class="text-gold-muted text-sm mt-1">Xin chào, Nguyen</p>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-white/70 hover:bg-[#493f22]/50 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span class="text-sm font-medium">Tổng quan</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-[#493f22] text-primary border-l-2 border-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">shopping_basket</span>
+<span class="text-sm font-medium">Lịch sử đơn hàng</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-white/70 hover:bg-[#493f22]/50 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">person</span>
+<span class="text-sm font-medium">Hồ sơ &amp; Cài đặt</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-white/70 hover:bg-[#493f22]/50 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">location_on</span>
+<span class="text-sm font-medium">Sổ địa chỉ</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-white/70 hover:bg-[#493f22]/50 hover:text-white transition-colors mt-4" href="#">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+<span class="text-sm font-medium">Đăng xuất</span>
+</a>
+</nav>
+</div>
+</aside>
+<!-- Main Order Details -->
+<main class="flex-1 min-w-0">
+<!-- Breadcrumb -->
+<div class="mb-6 flex items-center gap-2 text-sm text-gold-muted">
+<a class="hover:text-primary" href="#">Lịch sử đơn hàng</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-white">#30492</span>
+</div>
+<!-- Order Header -->
+<div class="flex flex-wrap justify-between items-start gap-6 mb-8 border-b border-[#493f22] pb-8">
+<div class="flex flex-col gap-2">
+<h1 class="text-3xl md:text-4xl font-bold text-white tracking-tight">Chi tiết đơn hàng #30492</h1>
+<div class="flex flex-wrap gap-x-4 gap-y-2 text-gold-muted text-base">
+<span>Đặt ngày 24 tháng 10, 2023</span>
+<span class="hidden md:inline">•</span>
+<span class="flex items-center gap-2">
+                                Trạng thái: 
+                                <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-primary/20 text-primary text-xs font-bold uppercase tracking-wider border border-primary/30">
+<span class="size-1.5 rounded-full bg-primary"></span>
+                                    Đang giao hàng
+                                </span>
+</span>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center justify-center h-10 px-5 rounded-lg bg-primary hover:bg-yellow-400 text-background-dark text-sm font-bold tracking-wide transition-colors gap-2">
+<span class="material-symbols-outlined text-[18px]">local_shipping</span>
+                            Theo dõi đơn
+                        </button>
+<button class="flex items-center justify-center h-10 px-5 rounded-lg border border-[#493f22] hover:border-primary text-white hover:text-primary text-sm font-medium tracking-wide transition-colors gap-2 bg-transparent">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                            Hóa đơn
+                        </button>
+</div>
+</div>
+<!-- Products List -->
+<section class="mb-12">
+<h3 class="text-lg font-medium text-white mb-4">Sản phẩm (2)</h3>
+<div class="flex flex-col gap-4">
+<!-- Item 1 -->
+<div class="group flex flex-col sm:flex-row gap-5 p-4 rounded-xl bg-surface-dark/50 border border-[#493f22] hover:border-[#665833] transition-colors">
+<div class="shrink-0">
+<div class="w-full sm:w-[100px] aspect-[3/4] rounded-lg bg-cover bg-center bg-gray-700 overflow-hidden" data-alt="Black luxury leather tote bag on dark background" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDS2maFDIFoCHXrN-o9D9hf0KWzfxzfHqf6N3m5w2HjLwsf2fIm1Qkr5Ol_-vFnfKN-guJLneBJF3Z1Vf_yojXbvE98M67yN7W5DAb9X9HCDYpfuRGfs1tqrzbwHyi7nfP7V7HOs2cvl74J7NCXmlk0GhyPXp_puEW7J4bZNs0y5nJ_GX9ie1befL5K-O6sodr6-eAM6GoWOjSUfMMwOnKQYbjODvhRXGlpWRfSGMPWybFRpvSdZikI2he5g1E-zsGIc9OMwnmyUKQ');">
+</div>
+</div>
+<div class="flex flex-1 flex-col justify-between py-1">
+<div class="flex justify-between items-start gap-4">
+<div>
+<h4 class="text-white text-lg font-medium leading-snug">Signature Leather Tote</h4>
+<p class="text-gold-muted text-sm mt-1">Màu sắc: Midnight Black</p>
+<p class="text-gold-muted text-sm">Kích thước: Lớn</p>
+</div>
+<p class="text-white text-lg font-medium text-right whitespace-nowrap">25.000.000 ₫</p>
+</div>
+<div class="flex justify-between items-end mt-4 sm:mt-0">
+<p class="text-white/60 text-sm bg-[#493f22]/30 px-2 py-1 rounded">Số lượng: 1</p>
+<button class="text-sm text-primary hover:text-white transition-colors">Viết đánh giá</button>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="group flex flex-col sm:flex-row gap-5 p-4 rounded-xl bg-surface-dark/50 border border-[#493f22] hover:border-[#665833] transition-colors">
+<div class="shrink-0">
+<div class="w-full sm:w-[100px] aspect-[3/4] rounded-lg bg-cover bg-center bg-gray-700 overflow-hidden" data-alt="Beige silk scarf with elegant pattern" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCHc1-5PPhDCbSeA5CRRAGEPkEmYGzQAdnGtTEixuk8blQU6GaFNx71-r7-LKw-2_1ADW-IrMJXf9fHseAf3O2-iWNGxjzTCYKXsFqQB3ltSvA-ZT2f7cYCPuVrU6ichN5bvflFr1_HfVlRYygyo87cwADAVmzJf5eGC9f0Xnv22xSVJRQ1FAJohUGo29zFyHImh4mwLo5gG5gLgvNJUuQoGpcflkM1Udd_9f80VVzbmX-iduWKgYlrRLO8VKkdHeMPuBhAwKknbYk');">
+</div>
+</div>
+<div class="flex flex-1 flex-col justify-between py-1">
+<div class="flex justify-between items-start gap-4">
+<div>
+<h4 class="text-white text-lg font-medium leading-snug">Silk Heritage Scarf</h4>
+<p class="text-gold-muted text-sm mt-1">Màu sắc: Beige &amp; Gold</p>
+<p class="text-gold-muted text-sm">Kích thước: 90x90cm</p>
+</div>
+<p class="text-white text-lg font-medium text-right whitespace-nowrap">5.500.000 ₫</p>
+</div>
+<div class="flex justify-between items-end mt-4 sm:mt-0">
+<p class="text-white/60 text-sm bg-[#493f22]/30 px-2 py-1 rounded">Số lượng: 1</p>
+<button class="text-sm text-primary hover:text-white transition-colors">Viết đánh giá</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Info Grid & Totals -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Information Column (Left 2/3) -->
+<div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Shipping Address -->
+<div class="p-5 rounded-xl bg-surface-dark border border-[#493f22]">
+<div class="flex items-center gap-2 mb-3 text-white">
+<span class="material-symbols-outlined text-primary text-[20px]">location_on</span>
+<h4 class="font-medium">Địa chỉ nhận hàng</h4>
+</div>
+<div class="text-gold-muted text-sm leading-relaxed pl-7">
+<p class="text-white font-medium mb-1">Nguyen Van A</p>
+<p>123 Đường Đồng Khởi, Quận 1</p>
+<p>TP. Hồ Chí Minh, Việt Nam</p>
+<p class="mt-2">+84 90 123 4567</p>
+</div>
+</div>
+<!-- Payment Method -->
+<div class="p-5 rounded-xl bg-surface-dark border border-[#493f22]">
+<div class="flex items-center gap-2 mb-3 text-white">
+<span class="material-symbols-outlined text-primary text-[20px]">credit_card</span>
+<h4 class="font-medium">Phương thức thanh toán</h4>
+</div>
+<div class="text-gold-muted text-sm leading-relaxed pl-7">
+<p class="text-white font-medium mb-1">Thẻ tín dụng quốc tế</p>
+<div class="flex items-center gap-2 mt-1">
+<span class="bg-white/10 px-1.5 py-0.5 rounded text-xs text-white">VISA</span>
+<span>**** 4242</span>
+</div>
+</div>
+</div>
+<!-- Shipping Method -->
+<div class="p-5 rounded-xl bg-surface-dark border border-[#493f22]">
+<div class="flex items-center gap-2 mb-3 text-white">
+<span class="material-symbols-outlined text-primary text-[20px]">local_shipping</span>
+<h4 class="font-medium">Vận chuyển</h4>
+</div>
+<div class="text-gold-muted text-sm leading-relaxed pl-7">
+<p class="text-white font-medium mb-1">Chuyển phát nhanh cao cấp</p>
+<p>Giao hàng trong 2-3 ngày làm việc</p>
+</div>
+</div>
+</div>
+<!-- Summary Column (Right 1/3) -->
+<div class="lg:col-span-1">
+<div class="bg-surface-dark rounded-xl p-6 border border-[#493f22]">
+<h4 class="text-white font-medium mb-4">Tổng cộng đơn hàng</h4>
+<div class="flex flex-col gap-3 pb-4 border-b border-[#493f22]">
+<div class="flex justify-between text-sm">
+<span class="text-gold-muted">Tạm tính</span>
+<span class="text-white">30.500.000 ₫</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-gold-muted">Phí vận chuyển</span>
+<span class="text-white">Miễn phí</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-gold-muted">Thuế (VAT 8%)</span>
+<span class="text-white">2.440.000 ₫</span>
+</div>
+</div>
+<div class="flex justify-between items-center pt-4">
+<span class="text-white font-bold text-lg">Tổng cộng</span>
+<span class="text-primary font-bold text-xl">32.940.000 ₫</span>
+</div>
+<button class="w-full mt-6 py-3 rounded-lg bg-[#493f22] text-white hover:bg-[#5a4e2b] text-sm font-bold transition-colors">
+                                Cần hỗ trợ?
+                            </button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

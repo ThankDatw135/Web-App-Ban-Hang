@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Payment Page - Aurum Tailors</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&amp;family=Playfair+Display:wght@400;500;600;700&amp;family=Lato:wght@300;400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#C9B37E", // Gold accent
+                        "primary-hover": "#B09B6A",
+                        "background-dark": "#0E0E0E", // Deep charcoal black
+                        "surface-dark": "#18181B", // Dark card background
+                        "input-bg-dark": "#27272A", // Slightly lighter for inputs
+                        "input-border-dark": "#3F3F46",
+                        "text-main-dark": "#E4E4E7", // Warm off-white
+                        "text-muted-dark": "#A1A1AA",
+                    },
+                    fontFamily: {
+                        display: ["Playfair Display", "serif"],
+                        body: ["Lato", "sans-serif"],
+                        brand: ["Cinzel", "serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                    },
+                },
+            },
+        };
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .gold-glow:hover {
+                box-shadow: 0 0 15px rgba(201, 179, 126, 0.3);
+            }
+            .form-radio:checked {
+                background-color: transparent;
+                border-color: #C9B37E;
+                color: #C9B37E;
+                background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23C9B37E' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e");
+            }
+        }
+    </style>
+</head>
+<body class="bg-background-dark text-text-main-dark min-h-screen font-body selection:bg-primary selection:text-black">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+<header class="text-center mb-16">
+<h1 class="font-brand text-3xl md:text-4xl tracking-widest text-[#EAEAEA] uppercase">Aurum Tailors</h1>
+</header>
+<nav class="max-w-5xl mx-auto mb-20 px-4">
+<ol class="flex items-center w-full text-xs font-bold tracking-[0.15em] uppercase">
+<li class="flex w-full items-center text-primary">
+<span class="shrink-0">Shipping</span>
+<div class="w-full h-[2px] bg-primary ml-6 mr-4"></div>
+</li>
+<li class="flex w-full items-center text-primary">
+<span class="shrink-0">Payment</span>
+<div class="w-full h-[2px] bg-[#27272A] ml-6 mr-4"></div>
+</li>
+<li class="flex items-center text-text-muted-dark">
+<span class="shrink-0">Review</span>
+</li>
+</ol>
+</nav>
+<div class="flex flex-col lg:flex-row gap-8 lg:gap-16 max-w-7xl mx-auto">
+<div class="flex-1 bg-surface-dark rounded-lg p-8 lg:p-10 shadow-lg border border-white/5">
+<h2 class="font-display text-3xl mb-10 text-white">Payment Method</h2>
+<form class="space-y-8">
+<div class="space-y-3">
+<label class="flex items-center justify-between p-4 border border-white/10 rounded cursor-pointer bg-input-bg-dark transition hover:border-primary/50 group">
+<div class="flex items-center">
+<input checked="" class="h-5 w-5 border-gray-600 text-primary focus:ring-offset-surface-dark focus:ring-primary bg-transparent form-radio" name="paymentType" type="radio" value="card"/>
+<span class="ml-3 text-sm font-medium text-gray-200 group-hover:text-white transition-colors">Credit Card</span>
+</div>
+<div class="flex space-x-2 text-gray-400">
+<span class="material-icons-outlined text-lg">credit_card</span>
+</div>
+</label>
+<label class="flex items-center justify-between p-4 border border-white/10 rounded cursor-pointer bg-input-bg-dark transition hover:border-primary/50 group">
+<div class="flex items-center">
+<input class="h-5 w-5 border-gray-600 text-primary focus:ring-offset-surface-dark focus:ring-primary bg-transparent form-radio" name="paymentType" type="radio" value="paypal"/>
+<span class="ml-3 text-sm font-medium text-gray-200 group-hover:text-white transition-colors">Pay with PayPal</span>
+</div>
+<div class="flex space-x-2 text-gray-400">
+<span class="material-icons-outlined text-lg">account_balance_wallet</span>
+</div>
+</label>
+</div>
+<div class="space-y-6 pt-2">
+<div>
+<label class="sr-only" for="cardNumber">Card Number</label>
+<div class="relative">
+<input class="block w-full rounded border border-white/10 bg-input-bg-dark text-gray-200 focus:border-primary focus:ring-1 focus:ring-primary sm:text-sm py-4 px-5 placeholder-gray-500" id="cardNumber" name="cardNumber" placeholder="Card Number" type="text"/>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-500">
+<span class="material-icons-outlined">lock</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="md:col-span-1">
+<label class="sr-only" for="expiryDate">Expiration Date (MM/YY)</label>
+<input class="block w-full rounded border border-white/10 bg-input-bg-dark text-gray-200 focus:border-primary focus:ring-1 focus:ring-primary sm:text-sm py-4 px-5 placeholder-gray-500" id="expiryDate" name="expiryDate" placeholder="Expiration Date (MM/YY)" type="text"/>
+</div>
+<div class="md:col-span-1">
+<label class="sr-only" for="cvv">CVV</label>
+<div class="relative">
+<input class="block w-full rounded border border-white/10 bg-input-bg-dark text-gray-200 focus:border-primary focus:ring-1 focus:ring-primary sm:text-sm py-4 px-5 placeholder-gray-500" id="cvv" name="cvv" placeholder="CVV" type="text"/>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-500">
+<span class="material-icons-outlined text-sm">help_outline</span>
+</div>
+</div>
+</div>
+</div>
+<div>
+<label class="sr-only" for="cardName">Cardholder Name</label>
+<input class="block w-full rounded border border-white/10 bg-input-bg-dark text-gray-200 focus:border-primary focus:ring-1 focus:ring-primary sm:text-sm py-4 px-5 placeholder-gray-500" id="cardName" name="cardName" placeholder="Cardholder Name" type="text"/>
+</div>
+</div>
+<div class="pt-8">
+<button class="w-full bg-primary hover:bg-primary-hover text-black font-bold py-4 px-4 rounded transition duration-200 gold-glow shadow-lg" type="button">
+                            Continue to Review
+                        </button>
+</div>
+</form>
+</div>
+<div class="w-full lg:w-[420px]">
+<div class="bg-surface-dark rounded-lg p-8 lg:p-10 shadow-lg border border-white/5 sticky top-6">
+<h2 class="font-display text-3xl mb-8 text-white">Your Order</h2>
+<ul class="space-y-8 mb-8">
+<li class="flex">
+<div class="h-20 w-16 flex-shrink-0 overflow-hidden rounded border border-white/10 bg-white">
+<img alt="Tailored Blazer in grey wool" class="h-full w-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBggKozeil8Ago-MJfHNnQixon49WI5LvMtRPA4VSHH_AV8DYpRc8lfVyX0TS2sVLmT5P-WXu9Z6CzgdJGzRlze2I5kzJA1e9irKB9HfMnBYSo7GnqST5jo6kWs6BXDO6fBSloP2J16zOba-sHGfsZbje76EdJfDIC0yYscOqGSr0jP6PRN1DywAThiLyh62lhSZqlEsmcD8_vtPv097CwbMU6Rn5xsTG25-602dwmU_P7LuxNBei_AqtXTfZzMsRbyzKJ-mffzo74"/>
+</div>
+<div class="ml-6 flex flex-1 flex-col justify-center">
+<div class="flex justify-between text-base font-medium text-white">
+<h3 class="font-display text-lg leading-tight">
+<a href="#">Tailored Blazer</a>
+</h3>
+<p class="ml-4 tabular-nums">$1,250.00</p>
+</div>
+<p class="mt-1 text-sm text-text-muted-dark">Tailored quality blazer...</p>
+</div>
+</li>
+<li class="flex">
+<div class="h-20 w-16 flex-shrink-0 overflow-hidden rounded border border-white/10 bg-white">
+<img alt="Brown leather loafers" class="h-full w-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAI_668d0l7hBUoq7vH50qHz0HRhoTOD40jtM0iwT4FLmzeiTgxtTsG3w4oarIyqifCLq6RtINf1qntB_tN_OXzm1SO57qs_nmKBsVQJYLukb7DcuUz4EPic1iadABImaKpufmHsZQrofSFz6-oalwpCZqOHsNWT_7_CtRF-z3yjrrDPtg1s5x4ZMm1kOtIeD8xVjJFmzS8oLUGhxVTangAnE-YkSB-dcTp2vX0YQVB9f3Jk0CLDhIxCKK5kIFt5NshccdaxSVJmno"/>
+</div>
+<div class="ml-6 flex flex-1 flex-col justify-center">
+<div class="flex justify-between text-base font-medium text-white">
+<h3 class="font-display text-lg leading-tight">
+<a href="#">Leather Loafers</a>
+</h3>
+<p class="ml-4 tabular-nums">$850.00</p>
+</div>
+<p class="mt-1 text-sm text-text-muted-dark">Leather leather loafer...</p>
+</div>
+</li>
+</ul>
+<div class="border-t border-white/10 pt-8 space-y-4">
+<div class="flex justify-between text-sm text-gray-300">
+<p>Subtotal</p>
+<p class="tabular-nums font-medium">$1,925.00</p>
+</div>
+<div class="flex justify-between text-sm text-gray-300">
+<p>Shipping</p>
+<p class="tabular-nums font-medium">$25.00</p>
+</div>
+<div class="flex justify-between text-sm text-gray-300">
+<p>Tax</p>
+<p class="tabular-nums font-medium">$10.00</p>
+</div>
+<div class="flex justify-between text-xl font-display text-white pt-6 mt-4">
+<p>Total</p>
+<p class="tabular-nums">$1,925.00</p>
+</div>
+</div>
+</div>
+<div class="mt-8 flex justify-center items-center text-gray-500 text-sm">
+<span class="material-icons-outlined text-sm mr-2">lock</span>
+                Secure Checkout
+            </div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-24 pt-12 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-8">
+<h3 class="font-display text-3xl text-[#EAEAEA]">Receive updates</h3>
+<form class="flex w-full md:w-auto flex-1 md:max-w-2xl gap-4">
+<label class="sr-only" for="email-address">Email address</label>
+<input autocomplete="email" class="min-w-0 w-full flex-auto rounded border-none bg-[#27272A] px-5 py-3.5 text-white shadow-sm ring-0 placeholder:text-gray-500 focus:ring-1 focus:ring-primary sm:text-sm sm:leading-6" id="email-address" name="email" placeholder="Email" required="" type="email"/>
+<button class="flex-none rounded bg-primary hover:bg-primary-hover px-10 py-3.5 text-sm font-bold text-black shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary transition-colors gold-glow uppercase tracking-wide" type="submit">Subscribe</button>
+</form>
+</div>
+</div>
+
+</body></html>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Launch background colors -->
+    <color name="launch_background">#FFFFFF</color>
+    <color name="launch_background_dark">#121212</color>
+    
+    <!-- App primary colors -->
+    <color name="primary">#000000</color>
+    <color name="primary_dark">#000000</color>
+    <color name="accent">#FFD700</color>
+</resources>

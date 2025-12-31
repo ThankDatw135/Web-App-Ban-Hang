@@ -58,4 +58,13 @@ export const CONFIG = {
     ORIGIN: process.env.CORS_ORIGIN || '*',
     CREDENTIALS: process.env.CORS_CREDENTIALS === 'true',
   },
+
+  // RabbitMQ
+  RABBITMQ: {
+    URL: process.env.RABBITMQ_URL,
+    HOST: process.env.RABBITMQ_HOST || 'localhost',
+    PORT: parseInt(process.env.RABBITMQ_PORT || '5672', 10),
+    USER: process.env.RABBITMQ_USER || 'guest',
+    PASSWORD: process.env.RABBITMQ_PASSWORD || 'guest',
+  },
 };

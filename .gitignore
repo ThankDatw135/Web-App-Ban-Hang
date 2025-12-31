@@ -96,11 +96,14 @@ DerivedData/
 *.xcuserstate
 project.xcworkspace/
 
-# Firebase
+# Firebase - CRITICAL: Prevent credential leaks
 google-services.json
 GoogleService-Info.plist
 firebase-debug.log
 firestore-debug.log
+*-firebase-adminsdk-*.json
+luxury-fashion-platform.json
+luxury-fashion-platform/
 
 # Docker
 docker-compose.override.yml
@@ -114,3 +117,10 @@ docker-compose.override.yml
 tmp/
 temp/
 *.tmp
+
+# Sensitive files - SECURITY
+*.pem
+*.cert
+*.crt
+secrets/
+.secrets/

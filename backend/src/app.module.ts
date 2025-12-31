@@ -13,6 +13,7 @@ import { DiscountsModule } from './discounts/discounts.module';
 import { BannersModule } from './banners/banners.module';
 import { AiTryonModule } from './ai-tryon/ai-tryon.module';
 import { NotificationsModule } from './notifications/notifications.module';
+import { RabbitMQModule } from './rabbitmq/rabbitmq.module';
 
 @Module({
   imports: [
@@ -46,6 +47,7 @@ import { NotificationsModule } from './notifications/notifications.module';
     BannersModule,
     AiTryonModule,
     NotificationsModule,
+    RabbitMQModule,
   ],
 })
 export class AppModule implements NestModule {

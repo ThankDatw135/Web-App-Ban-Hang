@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aurum &amp; Oak - Luxury Fashion</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#C9B37E", // Muted gold from reference
+                        "background-light": "#F7F5F2", // Ivory white
+                        "background-dark": "#0E0E0E", // Deep charcoal black from reference
+                        "surface-light": "#FFFFFF",
+                        "surface-dark": "#161616", // Slightly lighter than bg
+                        "text-light": "#2C2C2C",
+                        "text-dark": "#F7F5F2", // Ivory white for text
+                        "text-muted-light": "#666666",
+                        "text-muted-dark": "#A3A3A3",
+                    },
+                    fontFamily: {
+                        display: ["'Playfair Display'", "serif"],
+                        body: ["'Plus Jakarta Sans'", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "4px",
+                        'lg': '6px', 
+                        'xl': '12px',
+                    },
+                },
+            },
+        };
+    </script>
+<style type="text/tailwindcss">
+    @layer utilities {
+        .text-shadow-sm {
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+        .text-shadow-lg {
+            text-shadow: 0 4px 8px rgba(0,0,0,0.5);
+        }
+    }
+    html {
+        scroll-behavior: smooth;
+    }
+    .hover-zoom-img {
+        transition: transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    .group:hover .hover-zoom-img {
+        transform: scale(1.08);
+    }
+    .dropdown-menu {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-8px);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .group:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }.fade-up {
+        animation: fadeUp 0.8s ease-out forwards;
+    }
+    @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
+</head>
+<body class="bg-background-dark text-text-dark font-body antialiased selection:bg-primary selection:text-black transition-colors duration-500">
+<nav class="fixed w-full z-50 bg-[#0E0E0E]/80 backdrop-blur-md border-b border-white/5 transition-colors duration-300">
+<div class="max-w-[1400px] mx-auto px-6 sm:px-12">
+<div class="flex justify-between items-center h-24">
+<div class="flex-shrink-0 flex items-center">
+<a class="font-display font-medium text-2xl tracking-[0.2em] text-primary" href="#">AURUM &amp; OAK</a>
+</div>
+<div class="hidden lg:flex space-x-10 items-center">
+<a class="text-xs uppercase tracking-[0.2em] text-text-dark hover:text-primary transition-colors duration-300" href="#">New Arrivals</a>
+<a class="text-xs uppercase tracking-[0.2em] text-text-dark hover:text-primary transition-colors duration-300" href="#">Women</a>
+<a class="text-xs uppercase tracking-[0.2em] text-text-dark hover:text-primary transition-colors duration-300" href="#">Men</a>
+<a class="text-xs uppercase tracking-[0.2em] text-text-dark hover:text-primary transition-colors duration-300" href="#">Accessories</a>
+<a class="text-xs uppercase tracking-[0.2em] text-primary hover:text-white transition-colors duration-300 flex items-center gap-2 border-b border-primary/30 pb-0.5 hover:border-white" href="#">
+<span class="material-icons text-sm">view_in_ar</span>
+                    Thử trang phục ảo với AI
+                </a>
+</div>
+<div class="flex items-center space-x-8">
+<button class="text-text-dark hover:text-primary transition-colors duration-300">
+<span class="material-icons text-xl font-light">search</span>
+</button>
+<div class="relative group h-full flex items-center cursor-pointer">
+<button class="flex items-center space-x-2 text-xs uppercase tracking-widest hover:text-primary transition-colors duration-300 focus:outline-none">
+<span class="hidden sm:inline-block font-medium">Eleanor P.</span>
+<span class="material-icons text-xl font-light">person_outline</span>
+</button>
+<div class="dropdown-menu absolute right-0 top-16 w-56 bg-[#1A1A1A] border border-white/5 shadow-2xl rounded-sm py-2 z-50">
+<a class="block px-6 py-3 text-xs uppercase tracking-wider text-gray-300 hover:bg-[#252525] hover:text-primary transition-colors" href="#">Thông tin cá nhân</a>
+<a class="block px-6 py-3 text-xs uppercase tracking-wider text-gray-300 hover:bg-[#252525] hover:text-primary transition-colors" href="#">Đổi mật khẩu</a>
+<a class="block px-6 py-3 text-xs uppercase tracking-wider text-gray-300 hover:bg-[#252525] hover:text-primary transition-colors" href="#">Lịch sử hoạt động</a>
+<div class="border-t border-white/5 my-1"></div>
+<a class="block px-6 py-3 text-xs uppercase tracking-wider text-red-400 hover:bg-[#252525] transition-colors" href="#">Đăng xuất</a>
+</div>
+</div>
+<button class="text-text-dark hover:text-primary transition-colors duration-300 relative">
+<span class="material-icons text-xl font-light">shopping_bag</span>
+<span class="absolute -top-1 -right-1 h-1.5 w-1.5 bg-primary rounded-full"></span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<header class="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Elegant woman in camel coat" class="w-full h-full object-cover opacity-60 scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdyDoJ_IHoZpvHUSm7VCtXtvDDf4V0ua4coI2lNlEk4yVv1luQ7TXqpW4eXUlixXbI1XnW1mU83gR6C14j9PuDocV_pGKME5nLu9JF4KjV60a8d3eyY27VoaZWSg9oRV-0sa3QIrnO8T7lHhpAY1_MC7PVc78F6eK-O02OSKuK4AJCtxTO8sk4oLyAW-ExkUuS3EEceOcNVXZcx2h0GJh7WHP0WVc_6lQqM2AW35iL99ENa5cgv-UkJX_ho87Dfi2QUNBibhKxDEQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0E0E0E] via-transparent to-black/40"></div>
+</div>
+<div class="relative z-10 text-center max-w-5xl px-4 mt-20 fade-up">
+<p class="text-xs md:text-sm uppercase tracking-[0.4em] mb-6 text-primary font-medium">Timeless pieces for the modern connoisseur</p>
+<h1 class="font-display text-6xl md:text-8xl lg:text-9xl text-white mb-8 tracking-wide leading-none text-shadow-lg">
+            THE NEW ELEGANCE
+        </h1>
+<div class="flex flex-col items-center gap-8">
+<p class="text-lg text-gray-300/80 font-light italic font-display max-w-xl mx-auto tracking-wide">
+                "Where heritage meets contemporary vision."
+            </p>
+<a class="inline-block border border-white/30 text-white px-10 py-4 uppercase text-[10px] md:text-xs tracking-[0.3em] hover:bg-white hover:text-black transition-all duration-500 backdrop-blur-sm" href="#">
+                Discover Collection
+            </a>
+</div>
+</div>
+</header>
+<section class="py-24 px-6 sm:px-12 max-w-[1400px] mx-auto bg-background-dark">
+<div class="text-center mb-20">
+<h2 class="font-display text-4xl md:text-5xl text-white tracking-wide">Curated Collections</h2>
+<div class="w-16 h-px bg-primary/50 mx-auto mt-6"></div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 h-auto lg:h-[800px]">
+<div class="group relative overflow-hidden h-[600px] lg:h-full rounded-sm cursor-pointer">
+<img alt="Women's evening gown" class="w-full h-full object-cover hover-zoom-img opacity-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATUIiKA2dJk6r6mA0IvSqwdAVTSSYwszZXpl-OOxBXfVWpZJRu_7fxMHnj_M3o53MVPXrDpB5L8oaF1D52AxBJX4NB-gxNgwpenuyAkGCIYxzU9njwIGZmhvkvENOsI-ZXIq_Uvvy6LAxVLBfNZmdehQebLlQ7U4bhPHH8-iMBOzoeuep3F03sN9irDfp-eHiGzTEmTf8lsFIOi9orLK1EtKV2BFPpNpYMtN2DUMgajZsPCkDaWXLqdmn_ryv4INyHXwzvJzqOILw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500"></div>
+<div class="absolute bottom-12 left-0 right-0 text-center">
+<h3 class="font-display text-4xl md:text-5xl text-white mb-3 text-shadow-lg tracking-wide">WOMEN'S<br/>AUTUMN/WINTER</h3>
+<p class="text-gray-300 text-xs tracking-[0.3em] uppercase mt-2 font-light">Sophisticated Silhouettes</p>
+</div>
+</div>
+<div class="flex flex-col gap-8 h-full">
+<div class="group relative overflow-hidden flex-1 rounded-sm cursor-pointer min-h-[300px]">
+<img alt="Men's tailoring" class="w-full h-full object-cover hover-zoom-img opacity-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCi4cKzpjsF1d4ZhGy-zy41kmOJ_Q-qMrzzmehhPfMgVgQHlSFvMY2uZpHJlQ-1EqxaDFFeMEXG-xWAicEQmTz-gbokiZZ0lKGW3oH7kN0m5NcxlXoZMNDSNHrciVg93TNecEhW-Nt2HAMBdV4v0cstSXbRrKWmHYX90hO0Hlts12JuF03c-yBZJKfY4FJ6UpIkOOYWgCEENImQyl-cbYL6rYuDf-0nU0H3-uHFLk1jlH6tAZza6OUEM-ql4WJ81yHA07TqDErK7s0"/>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500"></div>
+<div class="absolute bottom-8 right-8 text-right">
+<h3 class="font-display text-3xl text-white mb-2 text-shadow-sm tracking-wide border-b border-transparent group-hover:border-primary inline-block transition-colors pb-1">MEN'S TAILORING</h3>
+</div>
+</div>
+<div class="group relative overflow-hidden flex-1 rounded-sm cursor-pointer min-h-[300px]">
+<img alt="Leather handbag" class="w-full h-full object-cover hover-zoom-img opacity-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9EGWUaxjMph6u0IVIyujGutQiD_60mx2Qb6N31xS38gxKb8WgyNMaxweKizHtNzaqic_NOx3i0PvzLFZialne-GsFYwtVO7qBxRSc9wPHpe0zwgQDp6PQdD0_hfCVnBrRMF5e_TT0C9N0qtI_VP-oG3WoQCxDkk0I9s9wXk9d9VIfbvQ8nhUMWMYQezESY-F63qvDkUxLuv7uPNU0vDTpVPb5p-dEh46kDfKPvXoeI7QZFlc86QXVR94lOMHKMBhUSSaurmXA8dE"/>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500"></div>
+<div class="absolute bottom-8 right-8 text-right">
+<h3 class="font-display text-3xl text-white mb-2 text-shadow-sm tracking-wide border-b border-transparent group-hover:border-primary inline-block transition-colors pb-1">FINE LEATHER GOODS</h3>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-[#0E0E0E]">
+<div class="max-w-[1400px] mx-auto px-6 sm:px-12">
+<div class="text-center mb-20">
+<h2 class="font-display text-4xl md:text-5xl text-white tracking-wide mb-4">Featured Pieces</h2>
+<p class="text-gray-400 font-light tracking-widest text-sm uppercase">Select pieces for the season</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden bg-[#151515] rounded-sm aspect-[4/5] mb-6">
+<img alt="Silk Scarf" class="w-full h-full object-cover hover-zoom-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAENAkMZzetsCtdiGBb8t-rXsRdSkaFRTvqFojaafwQdFoI_Ns0zIzGaMnZkT7bHZ4t7FCI04sNxEv1MCetHnfoYrQdE89K3th7tuH4eNhcmMmPunnIVvqDAfNfkGCsLBs3ZZbfnlm0ogZRQPvsTAwptHwcuzDD7ZLcHPHyefEGjYv-PN1XLYVVd7hO9D4kwqUzhu2LW-wwliwxXWWRURUG2cbcBqupC0TtzMWDDfeVpzpaHWLaZefJz2YVqi17wCpOElI1R-xeWnQ"/>
+</div>
+<div class="text-center">
+<h3 class="font-display text-xl text-white mb-2 tracking-wide">The Silk Foulard</h3>
+<p class="text-primary text-sm mb-4">$460</p>
+<a class="inline-block text-[10px] uppercase tracking-[0.2em] text-gray-400 border-b border-gray-700 hover:border-primary hover:text-primary transition-all pb-1" href="#">View Details</a>
+</div>
+</div>
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden bg-[#151515] rounded-sm aspect-[4/5] mb-6">
+<img alt="Luxury Watch" class="w-full h-full object-cover hover-zoom-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiKZS0jdv_GuZrw5ubwVFvK3ZElYYATJfx_NtbrFrZtSZAcfdoEPwdKdj6kd48QZh2T92DhUtjgFvogelMeXWRG8FSHJlAEZdIuCrJALZVgX2HRViqRcumlF4-o7x7Nfe30GzeW7oNASOfeBDxOoEF49nhV6ijUwfsWhuEiH8mxLlG_eQ7P9qwKVYZ3NFZzgqlUgEDDmH7auCjDdJsP9FvQ9kzb-OiwAyNco7_9p7S4zSOJ415gmhMcORHDOTU5iNwKfLD9yjKOCc"/>
+</div>
+<div class="text-center">
+<h3 class="font-display text-xl text-white mb-2 tracking-wide">The Silk Watch</h3>
+<p class="text-primary text-sm mb-4">$4,250</p>
+<a class="inline-block text-[10px] uppercase tracking-[0.2em] text-gray-400 border-b border-gray-700 hover:border-primary hover:text-primary transition-all pb-1" href="#">View Details</a>
+</div>
+</div>
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden bg-[#151515] rounded-sm aspect-[4/5] mb-6">
+<img alt="Leather Boots" class="w-full h-full object-cover hover-zoom-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDz9l-noTm3DKz8EF142Gi1uTEa0XyLoAC0NSW0aPvfxnNfMt8vJxUv8fMmONiE2PXZ_kWDrXa8n_OuaPHZNN9LWD2CeSlQ6JCBrQUPA4X86lrXyoaj1vSFwQPaEznOy-TlJIdsAnQwi0NvRqme5jXCTBp2JE_m-FX7CJ75eCNYtQkt0Xkn-BfiZccSTLlUwTqcb7W15L4bbcEHBkAlaiZA94YoQotJj6RQ0d_sCvxhPD3Di2cpad_BzbFAy2EX5FS5PZJ1wW9ikCA"/>
+</div>
+<div class="text-center">
+<h3 class="font-display text-xl text-white mb-2 tracking-wide">Boot Roots</h3>
+<p class="text-primary text-sm mb-4">$850</p>
+<a class="inline-block text-[10px] uppercase tracking-[0.2em] text-gray-400 border-b border-gray-700 hover:border-primary hover:text-primary transition-all pb-1" href="#">View Details</a>
+</div>
+</div>
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden bg-[#151515] rounded-sm aspect-[4/5] mb-6">
+<img alt="Wool Blazer" class="w-full h-full object-cover hover-zoom-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-3lGZvtV64hJfx4dCwNULZdsQt6KFvBhyAqfcBsd5lLpuvJoplJDqQVmA81Wcu0GIDxCqwYqqU8AbySYTvE--QV-7C-oZPCciVnbUk8yShSFEpHsEN8NJs138he7HG8rWfoeCkUO7qHWO9jh8vJX91scgBe7YC2O81VF2PCd5lYGvPmFVA933yE3gNhodozbtf1wjdhOOgbgvqRhxnGfQtO3l6nLV8K-PsWg99besFzKJRc9660iBk4coYGlPGAs8Rcqk4zmcrMo"/>
+</div>
+<div class="text-center">
+<h3 class="font-display text-xl text-white mb-2 tracking-wide">Biccoci Blazer</h3>
+<p class="text-primary text-sm mb-4">$1,290</p>
+<a class="inline-block text-[10px] uppercase tracking-[0.2em] text-gray-400 border-b border-gray-700 hover:border-primary hover:text-primary transition-all pb-1" href="#">View Details</a>
+</div>
+</div>
+</div>
+<div class="flex justify-center mt-12 gap-3">
+<div class="w-12 h-0.5 bg-primary"></div>
+<div class="w-2 h-0.5 bg-gray-700"></div>
+<div class="w-2 h-0.5 bg-gray-700"></div>
+</div>
+</div>
+</section>
+<section class="py-24 px-6 sm:px-12 max-w-[1200px] mx-auto bg-white dark:bg-[#0E0E0E]">
+<div class="text-center mb-16">
+<h2 class="font-display text-4xl md:text-5xl text-white tracking-wide">The Maison's Journal</h2>
+</div>
+<div class="bg-[#121212] p-6 md:p-10 rounded-lg border border-white/5">
+<div class="flex flex-col md:flex-row items-center gap-10">
+<div class="w-full md:w-1/2 overflow-hidden rounded-md">
+<img alt="Artisan working" class="w-full h-[350px] object-cover hover:scale-105 transition-transform duration-700 grayscale hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyi2CLdbdJenDYdYKXQUjanVO22iCdzOn0f1JtPMHpPriSnZ6TGAxY_OoWNL42_M98bRsCqnXmEruMwz09pzgmCygpjirZNc7lcah-R0sp2ug1NantfzIGnXb1-SqZ1M_nUCOszD0oNSerChgMVyXl2mx9gruPRTF2Bix3vFf1aAJDswArJR-3OnoEOJx1qoxQaqfuwk5m0BKFO47FplIz959dnhRlJeYSD0qYUUIshL1PzgJvD76Ktva24Bio4h3nt3LeESQrr5o"/>
+</div>
+<div class="w-full md:w-1/2 text-left px-4">
+<h3 class="font-display text-3xl md:text-4xl text-white mb-4 leading-tight">THE ART OF<br/>CRAFTSMANSHIP</h3>
+<p class="text-gray-400 text-base font-light leading-relaxed mb-8 max-w-md">
+                    Discover the meticulous process behind our latest collection, where heritage techniques meet contemporary design in our Florence atelier.
+                </p>
+<a class="inline-block border-b border-gray-600 pb-1 text-xs uppercase tracking-[0.2em] text-primary hover:text-white hover:border-white transition-colors" href="#">
+                    Read the Story
+                </a>
+</div>
+</div>
+</div>
+</section>
+<footer class="bg-[#0A0A0A] pt-20 pb-12 border-t border-white/5">
+<div class="max-w-[1400px] mx-auto px-6 sm:px-12">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-20">
+<div>
+<h3 class="font-display text-3xl text-white mb-2">Receive updates and exclusive offers.</h3>
+<p class="text-gray-500 font-light text-sm">Join our list for early access to new arrivals.</p>
+</div>
+<div class="flex justify-end gap-6 items-center">
+<div class="flex space-x-6 mr-8 border-r border-gray-800 pr-8">
+<a class="text-gray-500 hover:text-primary transition-colors" href="#"><span class="material-icons text-lg">close</span></a> 
+<a class="text-gray-500 hover:text-primary transition-colors" href="#">
+<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+</a>
+<a class="text-gray-500 hover:text-primary transition-colors" href="#">
+<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg>
+</a>
+</div>
+<form class="flex w-full max-w-md">
+<input class="w-64 bg-[#111] border border-[#333] border-r-0 rounded-l-sm px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-primary transition-colors" placeholder="Enter your email" type="email"/>
+<button class="bg-primary/20 border border-[#333] border-l-0 text-primary px-6 py-3 rounded-r-sm uppercase text-xs tracking-widest hover:bg-primary hover:text-black transition-colors" type="button">
+                        Subscribe
+                    </button>
+</form>
+</div>
+</div>
+<div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] text-gray-500 uppercase tracking-widest gap-4">
+<p>Aurum &amp; Oak</p>
+<div class="flex gap-8">
+<a class="hover:text-white transition-colors" href="#">About Us</a>
+<a class="hover:text-white transition-colors" href="#">Contact</a>
+<a class="hover:text-white transition-colors" href="#">Legal</a>
+<a class="hover:text-white transition-colors" href="#">Shipping &amp; Returns</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+    // Initializing dark mode by default as per request
+    document.documentElement.classList.add('dark');
+</script>
+
+</body></html>

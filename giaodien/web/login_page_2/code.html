@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Luxe Login</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Playfair+Display:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#eca413",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#181611",
+                        "surface-dark": "#221c10",
+                        "border-dark": "#393328",
+                        "input-bg": "#27231c",
+                        "input-border": "#544b3b",
+                        "text-muted": "#b9b09d",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"],
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white antialiased overflow-x-hidden selection:bg-primary selection:text-white">
+<div class="fixed inset-0 z-0 pointer-events-none">
+<img alt="Dark luxurious textured fabric background" class="h-full w-full object-cover opacity-20" data-alt="Dark luxurious textured fabric background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBh8sO03Vh9Al-kno8m5GXc30b569UJqVTzFTNKE9MNIDAuXnlGfmA8CrAElW4b-bV0gpBtCdK37mvouV9CQKZ9HWUM37sbYuOMi2_k6r2j_uguQJpxqD_xZU2wDEyBVJhDy2w8Wi4vOQnGrq14SIiM5Wy6pP6GKcyGw6L7ZZZloXOYV2K__EOEA3wyD6vmO3ekaBg2YiUOI2B7nuNTJvOialsLIxVJymm8ag5ETcbkyYoi8Hi7u34dpy9o5aWDQ4viJJA5S38b7Qo"/>
+<div class="absolute inset-0 bg-gradient-to-br from-background-dark/90 via-background-dark/95 to-background-dark"></div>
+</div>
+<div class="relative z-10 flex min-h-screen flex-col">
+<header class="flex items-center justify-between px-6 py-6 md:px-12 w-full">
+<div class="flex items-center gap-3 select-none">
+<span class="material-symbols-outlined text-primary text-3xl">diamond</span>
+<h2 class="text-white text-xl font-bold tracking-[0.2em] font-display">LUXE</h2>
+</div>
+<nav class="flex gap-4">
+<button class="hidden md:flex cursor-pointer items-center justify-center rounded-lg px-6 py-2 text-sm font-medium text-text-muted transition-colors hover:text-white">
+                    Contact Support
+                </button>
+<button class="flex min-w-[100px] cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-border-dark/50 backdrop-blur-sm px-4 py-2 text-white text-sm font-bold leading-normal tracking-[0.015em] border border-transparent hover:border-primary/50 transition-all duration-300 hover:bg-border-dark">
+<span class="truncate">Sign Up</span>
+</button>
+</nav>
+</header>
+<main class="flex flex-1 items-center justify-center p-4">
+<div class="w-full max-w-[480px] flex flex-col">
+<div class="bg-surface-dark/80 backdrop-blur-md border border-border-dark rounded-xl shadow-2xl p-8 md:p-10 relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/40 to-transparent opacity-50"></div>
+<div class="flex flex-col gap-2 mb-8 text-center">
+<h1 class="text-white font-serif text-4xl font-semibold leading-tight tracking-tight">Welcome Back</h1>
+<p class="text-text-muted text-base font-normal">Please enter your details to access your account.</p>
+</div>
+<form class="flex flex-col gap-5">
+<div class="flex flex-col gap-2">
+<label class="text-white text-sm font-medium leading-normal ml-1" for="email">Email Address</label>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-1 focus:ring-primary/50 border border-input-border bg-input-bg focus:border-primary h-12 md:h-14 placeholder:text-text-muted/50 px-4 text-base font-normal leading-normal transition-all duration-200" id="email" placeholder="name@example.com" type="email" value=""/>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between ml-1">
+<label class="text-white text-sm font-medium leading-normal" for="password">Password</label>
+</div>
+<div class="relative flex w-full items-center">
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-1 focus:ring-primary/50 border border-input-border bg-input-bg focus:border-primary h-12 md:h-14 placeholder:text-text-muted/50 pl-4 pr-12 text-base font-normal leading-normal transition-all duration-200" id="password" placeholder="Enter your password" type="password" value=""/>
+<button class="absolute right-0 top-0 h-full px-4 flex items-center justify-center text-text-muted hover:text-white transition-colors focus:outline-none" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</div>
+</div>
+<div class="flex justify-end -mt-1">
+<a class="text-sm font-medium text-text-muted hover:text-primary transition-colors flex items-center gap-1 group/link" href="#">
+<span>Forgot Password?</span>
+</a>
+</div>
+<button class="mt-2 flex w-full cursor-pointer items-center justify-center rounded-lg h-12 md:h-14 px-4 bg-primary text-[#181611] text-base font-bold leading-normal tracking-[0.015em] hover:bg-[#d4920f] hover:shadow-[0_0_15px_rgba(236,164,19,0.2)] active:scale-[0.99] transition-all duration-200">
+                            Log In
+                        </button>
+<button class="flex w-full cursor-pointer items-center justify-center gap-3 rounded-lg h-12 md:h-14 px-4 bg-input-bg border border-input-border text-white text-base font-bold leading-normal tracking-[0.015em] hover:border-primary/50 hover:bg-primary/5 hover:text-primary active:scale-[0.99] transition-all duration-200 group" type="button">
+<svg class="h-5 w-5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"></path>
+<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path>
+</svg>
+    Login with Google
+</button>
+</form>
+<div class="relative py-6">
+<div aria-hidden="true" class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-border-dark"></div>
+</div>
+</div>
+<div class="flex items-center justify-center gap-2">
+<span class="text-text-muted text-sm">Don't have an account?</span>
+<a class="text-white text-sm font-bold hover:text-primary transition-colors" href="#">Sign up</a>
+</div>
+</div>
+<div class="mt-8 flex justify-center gap-6 text-xs text-text-muted/60">
+<a class="hover:text-text-muted transition-colors" href="#">Privacy Policy</a>
+<span class="select-none">•</span>
+<a class="hover:text-text-muted transition-colors" href="#">Terms &amp; Conditions</a>
+</div>
+</div>
+</main>
+</div>
+</body></html>

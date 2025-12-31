@@ -17,7 +17,12 @@
   }
 
   * {
-    @apply border-border;
+    @apply border-white/10;
+  }
+
+  /* Fix material icons sizing */
+  .material-icons {
+    font-size: inherit;
   }
 
   body {

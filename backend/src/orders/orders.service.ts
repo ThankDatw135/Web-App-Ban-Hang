@@ -1,4 +1,4 @@
-import { Injectable, NotFoundException, BadRequestException } from '@nestjs/common';
+import { Injectable, NotFoundException, BadRequestException, Logger } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository, DataSource } from 'typeorm';
 import { Order } from './entities/order.entity';
@@ -9,9 +9,12 @@ import { Product } from '../products/entities/product.entity';
 import { CreateOrderDto, UpdateOrderStatusDto } from './dto/order.dto';
 import { ERROR_MESSAGES, SUCCESS_MESSAGES } from '../constants';
 import { generateOrderNumber } from '../utils/helpers';
+import { RabbitMQService } from '../rabbitmq/rabbitmq.service';
 
 @Injectable()
 export class OrdersService {
+  private readonly logger = new Logger(OrdersService.name);
+
   constructor(
     @InjectRepository(Order)
     private ordersRepository: Repository<Order>,
@@ -24,6 +27,7 @@ export class OrdersService {
     @InjectRepository(Product)
     private productsRepository: Repository<Product>,
     private dataSource: DataSource,
+    private rabbitMQService: RabbitMQService,
   ) {}
 
   async createOrder(firebaseUid: string, createOrderDto: CreateOrderDto) {
@@ -116,6 +120,22 @@ export class OrdersService {
       await queryRunner.manager.delete(CartItem, { userId: user.id });
 
       await queryRunner.commitTransaction();
+
+      // Publish order created event to RabbitMQ
+      try {
+        await this.rabbitMQService.publishOrderEvent('order_created', {
+          orderId: savedOrder.id,
+          orderNumber: savedOrder.orderNumber,
+          userId: user.id,
+          userEmail: user.email,
+          totalAmount: savedOrder.totalAmount,
+          finalAmount: savedOrder.finalAmount,
+          itemCount: cartItems.length,
+        });
+        this.logger.debug(`Order ${savedOrder.orderNumber} event published to RabbitMQ`);
+      } catch (error) {
+        this.logger.warn(`Failed to publish order event to RabbitMQ: ${error.message}`);
+      }
 
       return {
         message: SUCCESS_MESSAGES.ORDER_CREATED,
@@ -211,12 +231,14 @@ export class OrdersService {
   async updateOrderStatus(orderId: string, updateOrderStatusDto: UpdateOrderStatusDto) {
     const order = await this.ordersRepository.findOne({
       where: { id: orderId },
+      relations: ['user'],
     });
 
     if (!order) {
       throw new NotFoundException('Order not found');
     }
 
+    const previousStatus = order.status;
     order.status = updateOrderStatusDto.status;
 
     // Auto-update payment status for certain order statuses
@@ -226,11 +248,24 @@ export class OrdersService {
 
     await this.ordersRepository.save(order);
 
+    // Publish order status updated event to RabbitMQ
+    try {
+      await this.rabbitMQService.publishOrderEvent('order_status_updated', {
+        orderId: order.id,
+        orderNumber: order.orderNumber,
+        userId: order.userId,
+        previousStatus,
+        newStatus: order.status,
+        paymentStatus: order.paymentStatus,
+      });
+      this.logger.debug(`Order ${order.orderNumber} status update published to RabbitMQ`);
+    } catch (error) {
+      this.logger.warn(`Failed to publish order status update to RabbitMQ: ${error.message}`);
+    }
+
     return {
       message: SUCCESS_MESSAGES.ORDER_UPDATED,
       data: order,
     };
   }
-
-
 }

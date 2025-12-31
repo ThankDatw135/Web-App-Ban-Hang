@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Admin Order Details</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1717cf",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#111121",
+                        "surface-dark": "#1a1a32", 
+                        "surface-border": "#343465", 
+                        "muted-gold": "#C5A059", 
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #111121; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #343465; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4c4c8a; 
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display overflow-hidden selection:bg-primary selection:text-white">
+<div class="flex h-screen w-full">
+<aside class="hidden lg:flex flex-col w-72 h-full border-r border-gray-200 dark:border-surface-border bg-white dark:bg-background-dark shrink-0">
+<div class="flex flex-col h-full p-6">
+<div class="flex items-center gap-3 mb-10 px-2">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-10 shadow-lg shadow-primary/20" data-alt="Abstract blue geometric luxury logo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAzIBirsKmVLvlhWt-BUmVBLk-ksNBBopZLBROgRudSdm-sFaH9acakuaZXKs3g3rDNbUkIar168ZZwRGggYrxMbgcGD7nXNpP1ESnDTwvRa7dvdgpQ6Sa_PEdv7xNDEIKrrJrtBEYjMhv0uYpCr_KJX7SuwpZhjzfcCkUwiQLGAPOAdUzppy9T3eLxhaWG3xsyTL8BtlGI4BvBVQ7teSXhuTF6Wo1vFsqEVjoYNiO6eQKyPMimZoW7jv4MvniYrb9EWl-wGs2L6sk");'></div>
+<div class="flex flex-col">
+<h1 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-wide">Luxe Admin</h1>
+<p class="text-slate-500 dark:text-[#9393c8] text-xs font-medium tracking-widest uppercase">Fashion House</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2 flex-1">
+<a class="group flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-surface-dark transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-400 dark:text-[#9393c8] group-hover:text-primary dark:group-hover:text-white transition-colors">dashboard</span>
+<span class="text-slate-600 dark:text-[#9393c8] text-sm font-medium group-hover:text-slate-900 dark:group-hover:text-white transition-colors">Dashboard</span>
+</a>
+<a class="group flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-surface-dark transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-400 dark:text-[#9393c8] group-hover:text-primary dark:group-hover:text-white transition-colors">shopping_bag</span>
+<span class="text-slate-600 dark:text-[#9393c8] text-sm font-medium group-hover:text-slate-900 dark:group-hover:text-white transition-colors">Products</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl bg-primary shadow-lg shadow-primary/30" href="#">
+<span class="material-symbols-outlined text-white fill-1">orders</span>
+<span class="text-white text-sm font-semibold">Orders</span>
+</a>
+<a class="group flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-surface-dark transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-400 dark:text-[#9393c8] group-hover:text-primary dark:group-hover:text-white transition-colors">group</span>
+<span class="text-slate-600 dark:text-[#9393c8] text-sm font-medium group-hover:text-slate-900 dark:group-hover:text-white transition-colors">Customers</span>
+</a>
+<a class="group flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-surface-dark transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-400 dark:text-[#9393c8] group-hover:text-primary dark:group-hover:text-white transition-colors">analytics</span>
+<span class="text-slate-600 dark:text-[#9393c8] text-sm font-medium group-hover:text-slate-900 dark:group-hover:text-white transition-colors">Analytics</span>
+</a>
+</nav>
+<div class="mt-auto pt-6 border-t border-gray-200 dark:border-surface-border">
+<a class="group flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-surface-dark transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-400 dark:text-[#9393c8] group-hover:text-primary dark:group-hover:text-white transition-colors">settings</span>
+<span class="text-slate-600 dark:text-[#9393c8] text-sm font-medium group-hover:text-slate-900 dark:group-hover:text-white transition-colors">Settings</span>
+</a>
+<div class="flex items-center gap-3 px-4 py-4 mt-2">
+<div class="relative">
+<div class="w-10 h-10 rounded-full bg-cover bg-center border-2 border-white dark:border-surface-border" data-alt="Admin user profile picture" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB2eTIB6KDhZnxgk3HxglkiZjjRJUe7aPS3gIWQa5BWHwvBrXTrp9ju3Eoj2BiIPcHUVwVVkcBTnTrmP44_lwNKaUpInE-drU0C77WgoaoWMyCN1eHC3vtEXaAW22NphOyXsbEyE5zVK1ibv_02dtGMk_0ySdrmZq3RQy6d1skxxZk-zoAMP_c2LDoRheAX8TNXHQyjuZXJfBUvOBo7zc8zmhh41koaY_IvKur9dKhBoSfBsnDHc2fok7e8D3HkLva8IypQrrxvqbA');"></div>
+<div class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 rounded-full border-2 border-white dark:border-background-dark"></div>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-slate-900 dark:text-white">Admin User</span>
+<span class="text-xs text-slate-500 dark:text-[#9393c8]">Super Admin</span>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<main class="flex-1 flex flex-col h-full overflow-hidden bg-background-light dark:bg-background-dark relative">
+<div class="lg:hidden flex items-center justify-between p-4 bg-white dark:bg-background-dark border-b border-gray-200 dark:border-surface-border">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-900 dark:text-white">menu</span>
+<span class="font-bold text-lg dark:text-white">Luxe Admin</span>
+</div>
+<div class="w-8 h-8 rounded-full bg-gray-200 dark:bg-surface-dark"></div>
+</div>
+<div class="flex-1 overflow-y-auto w-full">
+<div class="max-w-[1400px] mx-auto p-6 lg:p-10 flex flex-col gap-6">
+<div class="flex flex-col gap-6">
+<nav class="flex items-center text-sm text-slate-500 dark:text-[#9393c8]">
+<a class="hover:text-primary transition-colors" href="#">Orders</a>
+<span class="material-symbols-outlined text-lg mx-2">chevron_right</span>
+<span class="text-slate-900 dark:text-white font-medium">#ORD-7829</span>
+</nav>
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<div class="flex flex-col gap-1">
+<h1 class="text-3xl font-serif font-bold text-slate-900 dark:text-white tracking-tight">Order #ORD-7829</h1>
+<div class="flex items-center gap-3 text-sm text-slate-500 dark:text-[#9393c8]">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-lg">calendar_today</span> Oct 24, 2023 at 4:30 PM</span>
+<span class="w-1 h-1 rounded-full bg-slate-300 dark:bg-surface-border"></span>
+<span>3 Items</span>
+<span class="w-1 h-1 rounded-full bg-slate-300 dark:bg-surface-border"></span>
+<span>Total: $2,450.00</span>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 px-4 py-2.5 rounded-lg border border-gray-200 dark:border-surface-border bg-white dark:bg-surface-dark text-slate-700 dark:text-white text-sm font-medium hover:bg-gray-50 dark:hover:bg-[#242447] transition-all">
+<span class="material-symbols-outlined text-lg">print</span>
+                                Print Invoice
+                            </button>
+<button class="flex items-center gap-2 px-4 py-2.5 rounded-lg border border-gray-200 dark:border-surface-border bg-white dark:bg-surface-dark text-slate-700 dark:text-white text-sm font-medium hover:bg-gray-50 dark:hover:bg-[#242447] transition-all">
+<span class="material-symbols-outlined text-lg">mail</span>
+                                Contact Customer
+                            </button>
+</div>
+</div>
+</div>
+<div class="p-6 rounded-xl bg-white dark:bg-surface-dark border border-gray-200 dark:border-surface-border shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+<div class="flex items-center gap-4">
+<div class="p-3 rounded-full bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400">
+<span class="material-symbols-outlined">local_shipping</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-[#9393c8] mb-0.5">Current Status</span>
+<div class="flex items-center gap-2">
+<span class="text-lg font-bold text-slate-900 dark:text-white">Processing</span>
+<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-blue-800 dark:bg-blue-500/20 dark:text-blue-300 border border-blue-200 dark:border-blue-500/20 uppercase">Paid</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3 w-full sm:w-auto">
+<div class="relative w-full sm:w-64">
+<select class="w-full appearance-none bg-gray-50 dark:bg-[#111122]/50 border border-gray-200 dark:border-surface-border text-slate-900 dark:text-white text-sm rounded-lg focus:ring-primary focus:border-primary block p-2.5 pr-8">
+<option selected="">Processing</option>
+<option>Shipped</option>
+<option>Delivered</option>
+<option>Cancelled</option>
+<option>Refunded</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-slate-500 dark:text-[#9393c8]">
+<span class="material-symbols-outlined text-lg">expand_more</span>
+</div>
+</div>
+<button class="px-5 py-2.5 rounded-lg bg-primary text-white text-sm font-medium hover:bg-primary/90 transition-all shadow-lg shadow-primary/25 whitespace-nowrap">
+                            Update Status
+                        </button>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+<div class="lg:col-span-2 flex flex-col gap-6">
+<div class="bg-white dark:bg-surface-dark border border-gray-200 dark:border-surface-border rounded-xl shadow-sm overflow-hidden">
+<div class="px-6 py-5 border-b border-gray-200 dark:border-surface-border flex justify-between items-center bg-gray-50/50 dark:bg-[#1a1a32]">
+<h3 class="font-serif text-xl font-semibold text-slate-900 dark:text-white">Items Ordered</h3>
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">expand_less</span>
+</button>
+</div>
+<div class="p-6 flex flex-col gap-6">
+<div class="flex flex-col sm:flex-row gap-6 pb-6 border-b border-gray-100 dark:border-surface-border/50 last:border-0 last:pb-0">
+<div class="w-full sm:w-32 h-40 rounded-lg bg-cover bg-center shrink-0 border border-gray-200 dark:border-surface-border" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAj7EgZkXtQWg3zJs4UH-VismqfqI-pkGJWiteRlOnWMPxdXMuNU988HhacbM46gQYDAbI2DsWi3CO-cGFNhukpyusVmlByimR96Lw3el-iILu3T6YeMjddJasM924TQ8ublJ9rJjyVeVwZS_hXtRLWK22hlj5ZyvvpXw5xUMQJULIoOALD9CcILupCCW_Rb5z58xSWSe05WL6x4EovqpUthkJaMfDPAkwfSFgC8N-cDC3d-KG-MfIKymBP8WKJfKEVe4rJPyKfLiQ');" title="Product Image"></div>
+<div class="flex-1 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Silk Midnight Evening Gown</h4>
+<p class="text-sm text-slate-500 dark:text-[#9393c8] mb-2">SKU: LXR-DR-0092</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 rounded bg-gray-100 dark:bg-background-dark text-xs font-medium text-slate-600 dark:text-gray-300">Size: M</span>
+<span class="px-2 py-1 rounded bg-gray-100 dark:bg-background-dark text-xs font-medium text-slate-600 dark:text-gray-300">Color: Midnight Blue</span>
+</div>
+</div>
+<span class="text-lg font-semibold text-slate-900 dark:text-white">$1,200.00</span>
+</div>
+<div class="flex justify-between items-end mt-4">
+<div class="text-sm text-slate-500 dark:text-[#9393c8]">Qty: <span class="text-slate-900 dark:text-white font-semibold">1</span></div>
+<div class="text-right">
+<p class="text-xs text-slate-500 dark:text-[#9393c8] mb-0.5">Total</p>
+<p class="text-base font-bold text-primary dark:text-blue-400">$1,200.00</p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row gap-6 pb-6 border-b border-gray-100 dark:border-surface-border/50 last:border-0 last:pb-0">
+<div class="w-full sm:w-32 h-40 rounded-lg bg-cover bg-center shrink-0 border border-gray-200 dark:border-surface-border" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD8yzDVWAWwav6dwVw7PNSBXnB71egE3HA8SGreEKwdlFiGNYp3nr3XX4H_QhsAc33LoVTz997BCX7Jqs7--qK4Lh9kbN6F9n7KTW4cOUyfoZbKuvBn7zerz6lPRi_wqtiU4mF9jv1tSWiJTKh6U4icnEa6btzLrqB67tugTUkGbEmgSdCZ2wfic-HvjyWwM3qDa3ljpT2_EM4FYWikvCa_f8cYMT60x8VzioanVqZavG0FvUEN-1wM0Q8kTwc5RGUnnQxwn-yXncI');" title="Product Image"></div>
+<div class="flex-1 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Velvet Clutch - Gold Edition</h4>
+<p class="text-sm text-slate-500 dark:text-[#9393c8] mb-2">SKU: LXR-AC-2201</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 rounded bg-gray-100 dark:bg-background-dark text-xs font-medium text-slate-600 dark:text-gray-300">One Size</span>
+<span class="px-2 py-1 rounded bg-gray-100 dark:bg-background-dark text-xs font-medium text-slate-600 dark:text-gray-300">Color: Deep Red</span>
+</div>
+</div>
+<span class="text-lg font-semibold text-slate-900 dark:text-white">$650.00</span>
+</div>
+<div class="flex justify-between items-end mt-4">
+<div class="text-sm text-slate-500 dark:text-[#9393c8]">Qty: <span class="text-slate-900 dark:text-white font-semibold">1</span></div>
+<div class="text-right">
+<p class="text-xs text-slate-500 dark:text-[#9393c8] mb-0.5">Total</p>
+<p class="text-base font-bold text-primary dark:text-blue-400">$650.00</p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row gap-6 pb-6 border-b border-gray-100 dark:border-surface-border/50 last:border-0 last:pb-0">
+<div class="w-full sm:w-32 h-40 rounded-lg bg-cover bg-center shrink-0 border border-gray-200 dark:border-surface-border" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDIBd4y3hICX3Jti9to0WD5V71d5kxmS4rro8wNI2VNWGQW0VTBLGCwbMjcMASM_qFtz6TW5Rgmihiav5RCHYUOzC1NmJKNCLDZSGnqZEfxJiOU4DIIx2Ve0pQCOyeJgoMGISV7x9frmCTsWbALi1LTa_vlfgrMDQDsfG0aK2rqoDbGQL5uvQ6Maf3LhXDKRE7iVL4nDPC4UkHH7SUULx7C4JyUnN9AdCaWkDJmcNT1qcC3Ie4B11arNgb5VPR9_KIxGhjYjSkBueU');" title="Product Image"></div>
+<div class="flex-1 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Cashmere Scarf</h4>
+<p class="text-sm text-slate-500 dark:text-[#9393c8] mb-2">SKU: LXR-AC-5592</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 rounded bg-gray-100 dark:bg-background-dark text-xs font-medium text-slate-600 dark:text-gray-300">One Size</span>
+<span class="px-2 py-1 rounded bg-gray-100 dark:bg-background-dark text-xs font-medium text-slate-600 dark:text-gray-300">Color: Beige</span>
+</div>
+</div>
+<span class="text-lg font-semibold text-slate-900 dark:text-white">$450.00</span>
+</div>
+<div class="flex justify-between items-end mt-4">
+<div class="text-sm text-slate-500 dark:text-[#9393c8]">Qty: <span class="text-slate-900 dark:text-white font-semibold">1</span></div>
+<div class="text-right">
+<p class="text-xs text-slate-500 dark:text-[#9393c8] mb-0.5">Total</p>
+<p class="text-base font-bold text-primary dark:text-blue-400">$450.00</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-surface-dark border border-gray-200 dark:border-surface-border rounded-xl shadow-sm overflow-hidden">
+<div class="px-6 py-5 border-b border-gray-200 dark:border-surface-border flex justify-between items-center bg-gray-50/50 dark:bg-[#1a1a32]">
+<h3 class="font-serif text-xl font-semibold text-slate-900 dark:text-white">Order History</h3>
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">expand_less</span>
+</button>
+</div>
+<div class="p-8">
+<div class="relative border-l border-gray-200 dark:border-surface-border ml-2 space-y-8">
+<div class="relative pl-8">
+<div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-blue-500 border-4 border-white dark:border-surface-dark shadow-sm"></div>
+<div class="flex flex-col gap-1">
+<p class="text-sm font-bold text-slate-900 dark:text-white">Order Status Updated to Processing</p>
+<p class="text-xs text-slate-500 dark:text-[#9393c8]">Today, 10:23 AM • by Admin User</p>
+</div>
+</div>
+<div class="relative pl-8">
+<div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-gray-300 dark:bg-surface-border border-4 border-white dark:border-surface-dark"></div>
+<div class="flex flex-col gap-1">
+<p class="text-sm font-medium text-slate-900 dark:text-white">Payment Confirmed</p>
+<p class="text-xs text-slate-500 dark:text-[#9393c8]">Oct 24, 2023, 4:32 PM • Stripe Gateway</p>
+</div>
+</div>
+<div class="relative pl-8">
+<div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-gray-300 dark:bg-surface-border border-4 border-white dark:border-surface-dark"></div>
+<div class="flex flex-col gap-1">
+<p class="text-sm font-medium text-slate-900 dark:text-white">Order Placed</p>
+<p class="text-xs text-slate-500 dark:text-[#9393c8]">Oct 24, 2023, 4:30 PM • Customer</p>
+</div>
+</div>
+</div>
+<div class="mt-8 pt-6 border-t border-gray-100 dark:border-surface-border">
+<h4 class="text-sm font-semibold text-slate-900 dark:text-white mb-3">Admin Notes</h4>
+<textarea class="w-full bg-gray-50 dark:bg-[#111122]/50 border border-gray-200 dark:border-surface-border rounded-lg p-3 text-sm focus:ring-primary focus:border-primary text-slate-900 dark:text-white placeholder-slate-400" placeholder="Add a note to this order..." rows="3"></textarea>
+<div class="flex justify-end mt-3">
+<button class="px-4 py-2 bg-white dark:bg-surface-dark border border-gray-200 dark:border-surface-border text-slate-600 dark:text-white text-sm font-medium rounded-lg hover:bg-gray-50 dark:hover:bg-[#242447] transition-colors">Add Note</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-6">
+<div class="bg-white dark:bg-surface-dark border border-gray-200 dark:border-surface-border rounded-xl shadow-sm overflow-hidden">
+<div class="px-6 py-5 border-b border-gray-200 dark:border-surface-border bg-gray-50/50 dark:bg-[#1a1a32]">
+<h3 class="font-serif text-xl font-semibold text-slate-900 dark:text-white">Order Summary</h3>
+</div>
+<div class="p-6 flex flex-col gap-3">
+<div class="flex justify-between text-sm">
+<span class="text-slate-500 dark:text-[#9393c8]">Subtotal (3 items)</span>
+<span class="text-slate-900 dark:text-white font-medium">$2,300.00</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-slate-500 dark:text-[#9393c8]">Shipping</span>
+<span class="text-slate-900 dark:text-white font-medium">$50.00</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-slate-500 dark:text-[#9393c8]">Tax (Estimated)</span>
+<span class="text-slate-900 dark:text-white font-medium">$100.00</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-slate-500 dark:text-[#9393c8]">Discount (VIP)</span>
+<span class="text-green-600 dark:text-green-400 font-medium">-$0.00</span>
+</div>
+<div class="border-t border-gray-100 dark:border-surface-border my-2"></div>
+<div class="flex justify-between items-center">
+<span class="text-base font-bold text-slate-900 dark:text-white">Total</span>
+<span class="text-2xl font-bold text-slate-900 dark:text-white">$2,450.00</span>
+</div>
+<div class="mt-2 text-xs text-right text-slate-500 dark:text-[#9393c8]">Paid via Credit Card **** 4242</div>
+</div>
+</div>
+<div class="bg-white dark:bg-surface-dark border border-gray-200 dark:border-surface-border rounded-xl shadow-sm overflow-hidden">
+<div class="px-6 py-5 border-b border-gray-200 dark:border-surface-border bg-gray-50/50 dark:bg-[#1a1a32] flex justify-between items-center">
+<h3 class="font-serif text-xl font-semibold text-slate-900 dark:text-white">Customer</h3>
+<button class="text-muted-gold text-sm font-medium hover:underline">View Profile</button>
+</div>
+<div class="p-6">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-14 h-14 rounded-full bg-cover bg-center border-2 border-gray-100 dark:border-surface-border" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC2ZgiRmpeErJz4U8LjYmxI9B-lOqbfa7L341CKW_-yataT0AFN76DtcxWgZxb_Iis-CwJCEL6Acbq6-TttGNmtk7g1iNPVGzTJDa7Yd0k_-YpmPNHgU3mEmZARq-onb9dhLGAg8NTNjRNj2sRj7hviCh1FhwqmV3WgTHG1FOtTa7VTBdSaAsqg4y4nQ1ZB8OLzxQGoy5nHLDKLu_xCINrky6VNVwounac8H-q2ceryK1_OvwtAqpBg4Pnl9zygujLjw8_V6nBlf1Y');"></div>
+<div>
+<h4 class="text-lg font-bold text-slate-900 dark:text-white">Isabella Rossi</h4>
+<p class="text-sm text-slate-500 dark:text-[#9393c8]">VIP Customer</p>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-gray-100 dark:bg-[#242447] flex items-center justify-center text-slate-500 dark:text-[#9393c8]">
+<span class="material-symbols-outlined text-sm">mail</span>
+</div>
+<a class="text-sm text-slate-700 dark:text-white hover:text-primary transition-colors truncate" href="mailto:isabella@example.com">isabella@example.com</a>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-gray-100 dark:bg-[#242447] flex items-center justify-center text-slate-500 dark:text-[#9393c8]">
+<span class="material-symbols-outlined text-sm">call</span>
+</div>
+<a class="text-sm text-slate-700 dark:text-white hover:text-primary transition-colors" href="tel:+1234567890">+1 (555) 123-4567</a>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-surface-dark border border-gray-200 dark:border-surface-border rounded-xl shadow-sm overflow-hidden">
+<div class="px-6 py-5 border-b border-gray-200 dark:border-surface-border bg-gray-50/50 dark:bg-[#1a1a32]">
+<h3 class="font-serif text-xl font-semibold text-slate-900 dark:text-white">Shipping &amp; Billing</h3>
+</div>
+<div class="p-6 flex flex-col gap-6">
+<div>
+<h4 class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-[#9393c8] mb-3">Shipping Address</h4>
+<p class="text-sm text-slate-700 dark:text-white leading-relaxed">
+                                        Isabella Rossi<br/>
+                                        123 Luxury Avenue, Penthouse 4B<br/>
+                                        Beverly Hills, CA 90210<br/>
+                                        United States
+                                    </p>
+</div>
+<div class="border-t border-gray-100 dark:border-surface-border"></div>
+<div>
+<h4 class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-[#9393c8] mb-3">Billing Address</h4>
+<p class="text-sm text-slate-700 dark:text-white leading-relaxed">
+                                        Same as shipping address
+                                    </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

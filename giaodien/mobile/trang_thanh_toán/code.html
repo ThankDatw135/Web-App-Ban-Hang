@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Trang Thanh Toán - Luxury Payment</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#e8ba30",
+              "background-light": "#f8f7f6",
+              "background-dark": "#211d11",
+              "surface-dark": "#2c2618",
+              "border-gold": "#655934",
+              "text-gold-muted": "#c8ba93",
+            },
+            fontFamily: {
+              "display": ["Manrope", "sans-serif"]
+            },
+            borderRadius: {
+                "DEFAULT": "0.5rem", 
+                "lg": "1rem", 
+                "xl": "1.5rem", 
+                "full": "9999px"
+            },
+          },
+        },
+      }
+    </script>
+<style>/* Custom scrollbar hide for horizontal scroll if needed */
+.no-scrollbar::-webkit-scrollbar {
+    display: none
+    }
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none
+    }
+/* Custom radio button styling overrides */
+input[type="radio"]:checked {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuAFL_46mEVs360a0COHsjecCraaTcOiKM5SW9BwKrMCCUdY23xHomnTeJfTXSTqpmZImw8jpgsFNpF9c7mZ5MXU_XElc26ZhVWVw1M9tNrK3NajbfHc1hPDEudITvPI9U1AGSfcAPwdNHg77FDIx2dZRbKhHeteol9tVXO-4-TMd7woQs_0y95Efct6bABvi_H8ejrIlR89Uz1zTiVj3j0ZHXlzyOHMi_rOEqUKdhEq0eI7ZzaiExoVQ6GtyZuzvEUkQ-a13hs2xQcV);
+    background-color: #e8ba30;
+    border-color: #e8ba30
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased">
+<div class="relative flex h-full min-h-screen w-full max-w-md mx-auto flex-col bg-background-light dark:bg-background-dark shadow-2xl overflow-hidden">
+<!-- Header -->
+<header class="flex items-center justify-between p-4 pb-2 z-10 bg-background-light dark:bg-background-dark sticky top-0">
+<button class="text-black dark:text-white flex size-12 shrink-0 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+</button>
+<h2 class="text-black dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Payment</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex items-center justify-center text-black dark:text-white">
+<span class="material-symbols-outlined text-[24px]">lock</span>
+</button>
+</div>
+</header>
+<!-- Progress Steps -->
+<div class="flex w-full flex-row items-center justify-center gap-2 py-4 px-6 border-b border-border-gold/20 mb-2">
+<span class="text-text-gold-muted text-xs font-medium">Shipping</span>
+<span class="material-symbols-outlined text-text-gold-muted text-[12px]">chevron_right</span>
+<span class="text-primary text-xs font-bold">Payment</span>
+<span class="material-symbols-outlined text-text-gold-muted text-[12px]">chevron_right</span>
+<span class="text-text-gold-muted/50 text-xs font-medium">Review</span>
+</div>
+<!-- Scrollable Content -->
+<main class="flex-1 overflow-y-auto pb-32 px-4 no-scrollbar">
+<!-- Amount Display -->
+<div class="flex flex-col items-center justify-center pt-4 pb-6">
+<span class="text-text-gold-muted text-sm font-medium uppercase tracking-widest mb-1">Total Due</span>
+<h1 class="text-black dark:text-white text-[32px] font-bold leading-tight tracking-tight">25,000,000 VND</h1>
+</div>
+<!-- Payment Methods Horizontal Scroll -->
+<div class="flex flex-col gap-3 mb-8">
+<h3 class="text-black dark:text-white text-base font-semibold px-1">Payment Method</h3>
+<div class="flex flex-col gap-3">
+<!-- Credit Card (Selected) -->
+<label class="group flex items-center gap-4 rounded-xl border border-primary bg-surface-dark/50 p-4 cursor-pointer transition-all hover:bg-surface-dark">
+<div class="flex grow flex-col">
+<p class="text-black dark:text-white text-sm font-bold leading-normal">Credit Card</p>
+</div>
+<input checked="" class="h-5 w-5 border-2 border-border-gold bg-transparent text-primary focus:ring-offset-0 focus:ring-primary focus:ring-1" name="payment_method" type="radio"/>
+</label>
+<!-- Apple Pay -->
+<label class="group flex items-center gap-4 rounded-xl border border-border-gold/30 p-4 cursor-pointer transition-all hover:border-border-gold/60 hover:bg-surface-dark/30">
+<div class="flex grow flex-col">
+<p class="text-black dark:text-white text-sm font-medium leading-normal opacity-70 group-hover:opacity-100">Apple Pay</p>
+</div>
+<input class="h-5 w-5 border-2 border-border-gold bg-transparent text-primary focus:ring-offset-0 focus:ring-primary focus:ring-1" name="payment_method" type="radio"/>
+</label>
+<!-- Gift Card -->
+<label class="group flex items-center gap-4 rounded-xl border border-border-gold/30 p-4 cursor-pointer transition-all hover:border-border-gold/60 hover:bg-surface-dark/30">
+<div class="flex grow flex-col">
+<p class="text-black dark:text-white text-sm font-medium leading-normal opacity-70 group-hover:opacity-100">Gift Card</p>
+</div>
+<input class="h-5 w-5 border-2 border-border-gold bg-transparent text-primary focus:ring-offset-0 focus:ring-primary focus:ring-1" name="payment_method" type="radio"/>
+</label>
+</div>
+</div>
+<!-- Card Details Form -->
+<div class="flex flex-col gap-5 animate-fade-in-up">
+<!-- Visual Card Representation -->
+<div class="relative w-full aspect-[1.586/1] rounded-2xl p-6 flex flex-col justify-between overflow-hidden shadow-lg border border-white/10" style="background: linear-gradient(135deg, #3a321e 0%, #1a160d 100%);">
+<!-- Decorative patterns -->
+<div class="absolute -right-10 -top-10 w-40 h-40 rounded-full bg-primary/10 blur-3xl"></div>
+<div class="absolute -left-10 -bottom-10 w-40 h-40 rounded-full bg-white/5 blur-3xl"></div>
+<div class="flex justify-between items-start z-10">
+<div class="w-12 h-8 rounded bg-gradient-to-r from-yellow-200 to-yellow-500 opacity-80" data-alt="Card Chip"></div>
+<span class="text-white/80 font-bold text-lg tracking-widest italic">VISA</span>
+</div>
+<div class="z-10 mt-auto">
+<div class="text-white/90 font-mono text-xl tracking-widest mb-4 drop-shadow-md">4829 •••• •••• 9318</div>
+<div class="flex justify-between items-end">
+<div class="flex flex-col">
+<span class="text-[10px] uppercase text-white/50 tracking-wider">Card Holder</span>
+<span class="text-sm font-medium text-white/90 tracking-wide">ALEXANDER WONG</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-[10px] uppercase text-white/50 tracking-wider">Expires</span>
+<span class="text-sm font-medium text-white/90 tracking-wide">12/25</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Inputs -->
+<div class="flex flex-col gap-4">
+<!-- Card Number -->
+<label class="flex flex-col gap-1.5">
+<span class="text-text-gold-muted text-xs font-semibold uppercase tracking-wider pl-1">Card Number</span>
+<div class="flex w-full items-center rounded-xl bg-surface-dark border border-border-gold/50 focus-within:border-primary focus-within:ring-1 focus-within:ring-primary/50 transition-all overflow-hidden">
+<span class="pl-4 text-text-gold-muted material-symbols-outlined text-[20px]">credit_card</span>
+<input class="w-full bg-transparent border-none text-white placeholder-white/20 h-12 px-3 focus:ring-0 text-base" placeholder="0000 0000 0000 0000" type="text" value="4829 1039 4821 9318"/>
+<span class="pr-4 text-green-500 material-symbols-outlined text-[20px] opacity-0 focus-within:opacity-100">check_circle</span>
+</div>
+</label>
+<!-- Name -->
+<label class="flex flex-col gap-1.5">
+<span class="text-text-gold-muted text-xs font-semibold uppercase tracking-wider pl-1">Cardholder Name</span>
+<div class="flex w-full items-center rounded-xl bg-surface-dark border border-border-gold/50 focus-within:border-primary focus-within:ring-1 focus-within:ring-primary/50 transition-all overflow-hidden">
+<input class="w-full bg-transparent border-none text-white placeholder-white/20 h-12 px-4 focus:ring-0 text-base" placeholder="Your Name" type="text" value="Alexander Wong"/>
+</div>
+</label>
+<!-- Expiry & CVC Grid -->
+<div class="flex gap-4">
+<label class="flex flex-col gap-1.5 flex-1">
+<span class="text-text-gold-muted text-xs font-semibold uppercase tracking-wider pl-1">Expiry Date</span>
+<div class="flex w-full items-center rounded-xl bg-surface-dark border border-border-gold/50 focus-within:border-primary focus-within:ring-1 focus-within:ring-primary/50 transition-all overflow-hidden">
+<input class="w-full bg-transparent border-none text-white placeholder-white/20 h-12 px-4 focus:ring-0 text-base text-center" placeholder="MM/YY" type="text" value="12/25"/>
+</div>
+</label>
+<label class="flex flex-col gap-1.5 flex-1">
+<span class="text-text-gold-muted text-xs font-semibold uppercase tracking-wider pl-1">CVV</span>
+<div class="flex w-full items-center rounded-xl bg-surface-dark border border-border-gold/50 focus-within:border-primary focus-within:ring-1 focus-within:ring-primary/50 transition-all overflow-hidden">
+<input class="w-full bg-transparent border-none text-white placeholder-white/20 h-12 px-4 focus:ring-0 text-base text-center" placeholder="123" type="password" value="***"/>
+<span class="pr-4 text-text-gold-muted/50 material-symbols-outlined text-[18px]">help</span>
+</div>
+</label>
+</div>
+<!-- Save Card Switch -->
+<div class="flex items-center justify-between py-2">
+<div class="flex flex-col">
+<span class="text-white font-medium text-sm">Save payment details</span>
+<span class="text-text-gold-muted text-xs">For faster checkout next time</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-surface-dark border border-border-gold rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-text-gold-muted after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary/20 peer-checked:after:bg-primary peer-checked:border-primary"></div>
+</label>
+</div>
+</div>
+</div>
+<!-- Spacer for bottom safe area -->
+<div class="h-8"></div>
+</main>
+<!-- Sticky Bottom CTA -->
+<div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-background-dark via-background-dark to-transparent pt-12 pointer-events-none">
+<button class="pointer-events-auto w-full h-14 bg-primary rounded-xl flex items-center justify-center gap-2 shadow-[0_8px_20px_rgba(232,186,48,0.2)] hover:shadow-[0_10px_25px_rgba(232,186,48,0.3)] transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined text-background-dark">lock</span>
+<span class="text-background-dark font-bold text-lg">Confirm Payment</span>
+</button>
+<!-- iOS Home Indicator Spacing -->
+<div class="h-1 w-full"></div>
+</div>
+</div>
+</body></html>

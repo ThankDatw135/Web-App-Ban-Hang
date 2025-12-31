@@ -1,47 +1,64 @@
-apply plugin: "com.android.application"
-apply plugin: "org.jetbrains.kotlin.android"
-apply plugin: "com.facebook.react"
+// App-level build.gradle for Flutter Android app
+// Sử dụng Kotlin (KHÔNG phải Java) và FlutterFire (KHÔNG phải Android Firebase SDK trực tiếp)
 
-react {
-    root = file("../")
-    reactNativeDir = file("../node_modules/react-native")
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    id "dev.flutter.flutter-gradle-plugin"
+    // Google Services plugin cho FlutterFire
+    id "com.google.gms.google-services"
 }
 
-def enableProguardInReleaseBuilds = true
-def jscFlavor = 'org.webkit:android-jsc:+'
-
 android {
-    ndkVersion rootProject.ext.ndkVersion
-    compileSdkVersion rootProject.ext.compileSdkVersion
+    namespace "com.cainart.luxuryfashion"
+    compileSdk = flutter.compileSdkVersion
+    ndkVersion flutter.ndkVersion
 
-    namespace "com.luxuryfashion"
+    compileOptions {
+        // Sử dụng Java 17 cho compatibility với Flutter 3.x
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+
     defaultConfig {
-        applicationId "com.luxuryfashion"
-        minSdkVersion rootProject.ext.minSdkVersion
-        targetSdkVersion rootProject.ext.targetSdkVersion
+        applicationId "com.cainart.luxuryfashion"
+        // SDK versions theo yêu cầu
+        minSdkVersion flutter.minSdkVersion
+        targetSdk 34
         versionCode 1
         versionName "1.0.0"
+        
+        // Multidex support nếu cần
+        multiDexEnabled true
     }
-    
+
     buildTypes {
+        debug {
+            // Debug build
+            debuggable true
+        }
         release {
-            minifyEnabled enableProguardInReleaseBuilds
-            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+            // Release build với minification
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
         }
     }
 }
 
+flutter {
+    source '../..'
+}
+
 dependencies {
-    implementation("com.facebook.react:react-android")
-    implementation("com.facebook.react:flipper-integration")
-
-    if (hermesEnabled.toBoolean()) {
-        implementation("com.facebook.react:hermes-android")
-    } else {
-        implementation jscFlavor
-    }
-
-    implementation platform('com.google.firebase:firebase-bom:32.7.0')
-    implementation 'com.google.firebase:firebase-auth'
-    implementation 'com.google.android.gms:play-services-auth:20.7.0'
+    // Kotlin standard library
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.1.0"
+    
+    // Multidex
+    implementation 'androidx.multidex:multidex:2.0.1'
 }

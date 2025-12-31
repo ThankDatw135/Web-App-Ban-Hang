@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Thông tin cá nhân - Luxury Fashion</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#f4c025",
+              "background-light": "#f8f8f5",
+              "background-dark": "#231e10",
+              "surface-dark": "#2d2818",
+              "border-gold": "#493f22",
+              "text-gold-muted": "#cbbc90",
+            },
+            fontFamily: {
+              "display": ["Manrope", "sans-serif"]
+            },
+            borderRadius: {
+                "DEFAULT": "0.25rem", 
+                "lg": "0.5rem", 
+                "xl": "0.75rem", 
+                "full": "9999px"
+            },
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white antialiased min-h-screen flex flex-col">
+<!-- Top Navigation -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-border-gold px-6 lg:px-10 py-4 bg-background-dark sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-white">
+<div class="size-6 text-primary">
+<svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z"></path>
+</svg>
+</div>
+<h2 class="text-white text-xl font-bold leading-tight tracking-wide">LUXURY FASHION</h2>
+</div>
+<nav class="hidden lg:flex items-center gap-9 ml-4">
+<a class="text-white/80 hover:text-primary transition-colors text-sm font-medium" href="#">New Arrivals</a>
+<a class="text-white/80 hover:text-primary transition-colors text-sm font-medium" href="#">Clothing</a>
+<a class="text-white/80 hover:text-primary transition-colors text-sm font-medium" href="#">Accessories</a>
+<a class="text-white/80 hover:text-primary transition-colors text-sm font-medium" href="#">Shoes</a>
+<a class="text-white/80 hover:text-primary transition-colors text-sm font-medium" href="#">Editorial</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<div class="hidden md:flex relative w-full max-w-xs h-10">
+<div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-text-gold-muted">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="block w-full h-full pl-10 pr-3 py-2 border-none rounded-lg leading-5 bg-surface-dark text-white placeholder-text-gold-muted focus:outline-none focus:ring-1 focus:ring-primary sm:text-sm" placeholder="Tìm kiếm sản phẩm..." type="text"/>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center justify-center rounded-full size-10 hover:bg-surface-dark text-white transition-colors">
+<span class="material-symbols-outlined">shopping_bag</span>
+</button>
+<div class="relative group">
+<button class="flex items-center justify-center rounded-full size-10 bg-surface-dark text-primary border border-primary/20 transition-colors">
+<span class="material-symbols-outlined">person</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Layout Container -->
+<div class="layout-container flex grow flex-col w-full max-w-[1440px] mx-auto">
+<div class="px-4 md:px-10 lg:px-20 py-10 flex flex-col lg:flex-row gap-12">
+<!-- Left Sidebar Navigation -->
+<aside class="w-full lg:w-1/4 shrink-0">
+<div class="flex flex-col gap-8 sticky top-28">
+<!-- User Profile Summary -->
+<div class="flex items-center gap-4 pb-6 border-b border-border-gold">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-14 border-2 border-primary/30" data-alt="User avatar profile picture showing a well dressed person" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB633Qr-QrbVNHo2k2876KqVROboxy3t56xt9ZE-K_rMjFrvwAKMbHH54pbpNJWB9WCcHSdo8uLKv0TM3HUY_CtuBth6q2thslRRMq6-5jU7cf8S-byeQDQHq8F3LLp418mg1m4iCg-Hh2ERGnXoYggsjgBgZ3C9y0-2AwnnHex16e-39H-sCOBwt_hJjQP_RxjcU8_nEIgvGjJzmvccD893orvwn2xuuJ1nUYtacLVP85jn8q172a7XLJ-3nMfepgUct8go8h0-NY");'>
+</div>
+<div class="flex flex-col">
+<h1 class="text-white text-lg font-bold leading-tight">Nguyễn Văn A</h1>
+<p class="text-primary text-sm font-medium">Thành viên Vàng</p>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-4 px-4 py-3 text-text-gold-muted hover:text-white hover:bg-surface-dark rounded-lg transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">dashboard</span>
+<span class="text-sm font-medium">Tổng quan tài khoản</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 bg-surface-dark border-l-2 border-primary text-white rounded-r-lg shadow-sm" href="#">
+<span class="material-symbols-outlined filled text-primary">person</span>
+<span class="text-sm font-bold">Thông tin cá nhân</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-text-gold-muted hover:text-white hover:bg-surface-dark rounded-lg transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">shopping_bag</span>
+<span class="text-sm font-medium">Lịch sử đơn hàng</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-text-gold-muted hover:text-white hover:bg-surface-dark rounded-lg transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">favorite</span>
+<span class="text-sm font-medium">Sản phẩm yêu thích</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-text-gold-muted hover:text-white hover:bg-surface-dark rounded-lg transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">settings</span>
+<span class="text-sm font-medium">Cài đặt</span>
+</a>
+<div class="pt-4 mt-2 border-t border-border-gold">
+<a class="flex items-center gap-4 px-4 py-3 text-red-400 hover:text-red-300 hover:bg-red-500/10 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="text-sm font-medium">Đăng xuất</span>
+</a>
+</div>
+</nav>
+</div>
+</aside>
+<!-- Right Main Content -->
+<main class="flex-1 min-w-0">
+<div class="flex flex-col gap-10">
+<!-- Page Header -->
+<div class="flex flex-col gap-2">
+<h2 class="text-3xl md:text-4xl font-light text-white tracking-tight">Thông tin cá nhân</h2>
+<p class="text-text-gold-muted text-base">Quản lý thông tin hồ sơ của bạn để bảo mật tài khoản và mua sắm thuận tiện hơn.</p>
+</div>
+<!-- Personal Details Section -->
+<section class="flex flex-col gap-6">
+<div class="flex items-center justify-between border-b border-border-gold pb-3">
+<h3 class="text-lg text-white font-medium flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">badge</span>
+                                Thông tin cơ bản
+                            </h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8">
+<!-- Field Item -->
+<div class="group relative flex flex-col gap-1">
+<label class="text-xs uppercase tracking-wider text-text-gold-muted font-medium">Họ và tên</label>
+<div class="flex items-center justify-between border-b border-white/10 pb-2 group-hover:border-primary/50 transition-colors">
+<span class="text-white font-medium text-lg">Nguyễn Văn A</span>
+<button class="text-primary opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-primary/10 rounded">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+</div>
+<!-- Field Item -->
+<div class="group relative flex flex-col gap-1">
+<label class="text-xs uppercase tracking-wider text-text-gold-muted font-medium">Email</label>
+<div class="flex items-center justify-between border-b border-white/10 pb-2 group-hover:border-primary/50 transition-colors">
+<span class="text-white font-medium text-lg">nguyen.a@example.com</span>
+<button class="text-primary opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-primary/10 rounded">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+</div>
+<!-- Field Item -->
+<div class="group relative flex flex-col gap-1">
+<label class="text-xs uppercase tracking-wider text-text-gold-muted font-medium">Số điện thoại</label>
+<div class="flex items-center justify-between border-b border-white/10 pb-2 group-hover:border-primary/50 transition-colors">
+<span class="text-white font-medium text-lg">0912 345 678</span>
+<button class="text-primary opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-primary/10 rounded">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+</div>
+<!-- Field Item -->
+<div class="group relative flex flex-col gap-1">
+<label class="text-xs uppercase tracking-wider text-text-gold-muted font-medium">Ngày sinh</label>
+<div class="flex items-center justify-between border-b border-white/10 pb-2 group-hover:border-primary/50 transition-colors">
+<span class="text-white font-medium text-lg">01/01/1990</span>
+<button class="text-primary opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-primary/10 rounded">
+<span class="material-symbols-outlined text-[18px]">calendar_month</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Address Section -->
+<section class="flex flex-col gap-6 pt-4">
+<div class="flex items-center justify-between border-b border-border-gold pb-3">
+<h3 class="text-lg text-white font-medium flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">local_shipping</span>
+                                Địa chỉ giao hàng
+                            </h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8">
+<!-- Field Item Full Width -->
+<div class="group relative flex flex-col gap-1 md:col-span-2">
+<label class="text-xs uppercase tracking-wider text-text-gold-muted font-medium">Địa chỉ chi tiết</label>
+<div class="flex items-center justify-between border-b border-white/10 pb-2 group-hover:border-primary/50 transition-colors">
+<span class="text-white font-medium text-lg">123 Đường Lê Lợi, Phường Bến Nghé</span>
+<button class="text-primary opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-primary/10 rounded">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+</div>
+<!-- Field Item -->
+<div class="group relative flex flex-col gap-1">
+<label class="text-xs uppercase tracking-wider text-text-gold-muted font-medium">Quận/Huyện</label>
+<div class="flex items-center justify-between border-b border-white/10 pb-2 group-hover:border-primary/50 transition-colors">
+<span class="text-white font-medium text-lg">Quận 1</span>
+<button class="text-primary opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-primary/10 rounded">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+</div>
+<!-- Field Item -->
+<div class="group relative flex flex-col gap-1">
+<label class="text-xs uppercase tracking-wider text-text-gold-muted font-medium">Tỉnh/Thành phố</label>
+<div class="flex items-center justify-between border-b border-white/10 pb-2 group-hover:border-primary/50 transition-colors">
+<span class="text-white font-medium text-lg">Hồ Chí Minh</span>
+<button class="text-primary opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-primary/10 rounded">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Billing Section -->
+<section class="flex flex-col gap-6 pt-4">
+<div class="flex items-center justify-between border-b border-border-gold pb-3">
+<h3 class="text-lg text-white font-medium flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">credit_card</span>
+                                Phương thức thanh toán
+                            </h3>
+<button class="text-xs font-bold text-primary hover:text-white uppercase tracking-wider transition-colors">Thêm thẻ mới</button>
+</div>
+<div class="flex flex-col gap-4">
+<div class="bg-surface-dark border border-white/5 p-4 rounded-xl flex items-center justify-between group cursor-pointer hover:border-primary/30 transition-all">
+<div class="flex items-center gap-4">
+<div class="w-12 h-8 bg-white rounded flex items-center justify-center">
+<img alt="Visa Card Logo" class="h-3 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAshzHgiehKKL6z3u_u4GGjAKKOklXbVczoK4t8-8rNPQ8fhICdqtJH8i7ht5rP_LQwRRWSzjkAyfcuK7QdXm6GBKAoxK97JCER7LmVQBX0cKdeaznTI0AQnRphJG2-5ncKgqjPnJ7jqXxmfCaPCVUZqHaxlFesV90z-FXvANToImdLE8VfRN-H3c0zd8VG6tWu3o3VD8IvA6dAVtYO40whEsuTedukDKfruu1wv8KXgcDT_pBxeoS5y1aijffwxudbBt650aiXWLE"/>
+</div>
+<div class="flex flex-col">
+<p class="text-white font-medium">Visa ending in 4242</p>
+<p class="text-text-gold-muted text-sm">Hết hạn 12/2025</p>
+</div>
+<span class="bg-primary/20 text-primary text-[10px] px-2 py-0.5 rounded font-bold uppercase tracking-wide">Mặc định</span>
+</div>
+<button class="text-text-gold-muted group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">edit</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Footer Action -->
+<div class="flex justify-end pt-8 pb-12">
+<button class="flex items-center justify-center gap-2 bg-primary hover:bg-[#d9a818] text-background-dark font-bold py-3 px-8 rounded-lg shadow-lg shadow-primary/20 transition-all active:scale-95">
+<span class="material-symbols-outlined text-[20px]">save</span>
+                            Lưu thay đổi
+                        </button>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>
