@@ -1,0 +1,222 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   LUXURY FASHION PLATFORM - GLOBAL STYLES
+   Design Philosophy: Quiet Luxury · Editorial
+   ============================================ */
+
+@layer base {
+  :root {
+    /* Primary Colors */
+    --color-charcoal: #0e0e0e;
+    --color-ivory: #f7f5f2;
+
+    /* Secondary Colors */
+    --color-soft-gray: #8b8b8b;
+    --color-muted-gold: #c9b37e;
+
+    /* Dark Mode Colors */
+    --color-dark-bg: #121212;
+    --color-dark-surface: #1e1e1e;
+    --color-warm-white: #f5f1e8;
+
+    /* Timing Functions */
+    --ease-elegant: cubic-bezier(0.4, 0, 0.2, 1);
+    --duration-slow: 600ms;
+    --duration-medium: 400ms;
+    --duration-fast: 200ms;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-dark-bg text-warm-white font-sans antialiased;
+    font-feature-settings: "kern" 1, "liga" 1;
+  }
+
+  /* Typography defaults */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif font-medium tracking-tight;
+  }
+
+  /* Selection */
+  ::selection {
+    @apply bg-muted-gold/30 text-warm-white;
+  }
+
+  /* Focus styles */
+  :focus-visible {
+    @apply outline-none ring-2 ring-muted-gold/50 ring-offset-2 ring-offset-dark-bg;
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-dark-surface;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-soft-gray/30 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-soft-gray/50;
+  }
+}
+
+@layer components {
+  /* Button Variants */
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3;
+    @apply font-sans font-medium text-sm tracking-wide;
+    @apply transition-all duration-medium ease-elegant;
+    @apply disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply btn bg-ivory text-charcoal;
+    @apply hover:bg-warm-white hover:scale-[1.02];
+    @apply active:scale-[0.98];
+  }
+
+  .btn-secondary {
+    @apply btn border border-ivory/30 text-ivory;
+    @apply hover:border-ivory/50 hover:bg-ivory/5;
+  }
+
+  .btn-ghost {
+    @apply btn text-ivory/80;
+    @apply hover:text-ivory hover:bg-ivory/5;
+  }
+
+  .btn-gold {
+    @apply btn bg-muted-gold text-charcoal;
+    @apply hover:bg-muted-gold/90;
+  }
+
+  /* Input Styles */
+  .input {
+    @apply w-full px-4 py-3;
+    @apply bg-dark-surface border border-ivory/10 rounded-sm;
+    @apply text-warm-white placeholder:text-soft-gray/60;
+    @apply transition-all duration-fast ease-elegant;
+    @apply focus:border-muted-gold/50 focus:ring-1 focus:ring-muted-gold/20;
+  }
+
+  /* Card Styles */
+  .card {
+    @apply bg-dark-surface rounded-sm overflow-hidden;
+    @apply border border-ivory/5;
+    @apply transition-all duration-medium ease-elegant;
+  }
+
+  .card-hover {
+    @apply hover:border-ivory/10 hover:shadow-lg hover:shadow-black/20;
+  }
+
+  /* Container */
+  .container-luxury {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Section spacing */
+  .section {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+
+  /* Text utilities */
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-muted-gold to-muted-gold/70 bg-clip-text text-transparent;
+  }
+
+  /* Link with underline animation */
+  .link-underline {
+    @apply relative inline-block;
+  }
+
+  .link-underline::after {
+    content: "";
+    @apply absolute bottom-0 left-0 w-full h-px bg-current;
+    @apply origin-right scale-x-0 transition-transform duration-medium ease-elegant;
+  }
+
+  .link-underline:hover::after {
+    @apply origin-left scale-x-100;
+  }
+
+  /* Image overlay */
+  .image-overlay {
+    @apply absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent;
+  }
+
+  /* Product card */
+  .product-card {
+    @apply group relative overflow-hidden;
+  }
+
+  .product-card-image {
+    @apply w-full aspect-[3/4] object-cover;
+    @apply transition-transform duration-slow ease-elegant;
+    @apply group-hover:scale-105;
+  }
+}
+
+@layer utilities {
+  /* Animation delays */
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+
+  /* Hide scrollbar */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Aspect ratios */
+  .aspect-product {
+    aspect-ratio: 3/4;
+  }
+  .aspect-hero {
+    aspect-ratio: 16/9;
+  }
+  .aspect-square {
+    aspect-ratio: 1/1;
+  }
+
+  /* Safe area padding */
+  .safe-area-inset-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}

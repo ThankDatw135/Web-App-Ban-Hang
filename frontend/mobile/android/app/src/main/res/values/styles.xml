@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base application theme - Dark mode default -->
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/darkBg</item>
+        <item name="android:statusBarColor">@color/darkBg</item>
+        <item name="android:navigationBarColor">@color/darkSurface</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+
+    <!-- Luxury Fashion Colors -->
+    <color name="charcoal">#0E0E0E</color>
+    <color name="ivory">#F7F5F2</color>
+    <color name="darkBg">#121212</color>
+    <color name="darkSurface">#1E1E1E</color>
+    <color name="mutedGold">#C9B37E</color>
+    <color name="warmWhite">#F5F1E8</color>
+</resources>
