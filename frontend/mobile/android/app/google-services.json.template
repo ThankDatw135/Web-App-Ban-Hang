@@ -1,0 +1,8 @@
+# Firebase Configuration Template
+# Copy to google-services.json and update with your Firebase project values
+
+# Download from Firebase Console:
+# 1. Go to Firebase Console → Project Settings
+# 2. Add Android app with package name: com.luxuryfashion
+# 3. Download google-services.json
+# 4. Place in: android/app/google-services.json
